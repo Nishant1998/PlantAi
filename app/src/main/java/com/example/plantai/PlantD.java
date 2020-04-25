@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,6 +24,8 @@ import java.io.File;
 
 public class PlantD extends AppCompatActivity {
 
+    private static final String TAG = "PlantD";
+    
     private static final String SHARED = "Settings";
     private static final String SHARED_APP_LANG = "app_lang";
     int selected_lang;
@@ -40,6 +43,7 @@ public class PlantD extends AppCompatActivity {
 
     }
 
+    /** onStart get context and set content **/
     @Override
     protected void onStart() {
         super.onStart();
@@ -50,14 +54,16 @@ public class PlantD extends AppCompatActivity {
         plantNumber = getIntent().getIntExtra("plant_num",0);
         //get setting and change language
         selected_lang = load_setting();
-        System.out.println(" **** selected_lang = " + selected_lang);
         setLang(selected_lang);
 
     }
 
 
+    /** OnClick Camera Button - start camera intent **/
     public void startCamera(View view) {
 
+        Log.d(TAG, "startCamera: Clicked on camera button");
+        
         StrictMode.VmPolicy.Builder newbuilder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(newbuilder.build());
 
@@ -69,6 +75,7 @@ public class PlantD extends AppCompatActivity {
         Uri outuri = Uri.fromFile(outFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, outuri);
 
+        Log.d(TAG, "startCamera: Starting camera.");
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 
     }
@@ -81,25 +88,27 @@ public class PlantD extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 if (resultCode == RESULT_OK) {
 
+                    Log.d(TAG, "onActivityResult: Reading clicked image.");
                     System.out.println("GOT RESULT CALLING CROP_IMAGE ###");
+                    Log.d(TAG, "onActivityResult: Starting crop image activity");
                     Intent intent = new Intent(this,CropImage.class);
                     startActivity(intent);
                 } else if (resultCode == RESULT_CANCELED) {
+                    Log.d(TAG, "onActivityResult: Cancelled.");
                     Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
                 }
             }
         }
     }
 
-    //TODO MENU
-    //TODO menu bar
+    
+    /**  MENU BAR   **/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent=null;
@@ -122,11 +131,9 @@ public class PlantD extends AppCompatActivity {
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
-
-
-    //TODO Change lang
-    void setLang(int i)
-    {
+    
+    /**  LOADING SETTINGS & SET LANGUAGE **/
+    void setLang(int i) {
         switch (plantNumber)
         {
             case 1:
@@ -403,10 +410,7 @@ public class PlantD extends AppCompatActivity {
                 break;
         }
     }
-
-    //TODO Load Setting
-    int load_setting()
-    {
+    int load_setting() {
         SharedPreferences mySharedPreference = getSharedPreferences(SHARED,MODE_PRIVATE);
         int i = mySharedPreference.getInt(SHARED_APP_LANG,0);
         return i;

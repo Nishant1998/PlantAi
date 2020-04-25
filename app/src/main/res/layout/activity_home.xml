@@ -6,422 +6,432 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPlants"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorGray"
-        android:orientation="vertical">
+        android:background="#c1c1c1"
+        android:scrollbars="vertical"
+        android:padding="4dp"/>
 
-        <!--Apple-->
-        <RelativeLayout
-            android:id="@+id/appleGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
-            >
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/colorGray"-->
+<!--        android:orientation="vertical">-->
 
-            <ImageView
-                android:id="@+id/applePlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/apple" />
-            <TextView
-                android:id="@+id/applePlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/applePlantPic"/>
+<!--        -->
 
-        </RelativeLayout>
+<!--        &lt;!&ndash;Apple&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/appleGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
+<!--            >-->
 
-        <!--Blueberry-->
-        <RelativeLayout
-            android:id="@+id/blueberryGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:background="@drawable/design_1"
-            >
+<!--            <ImageView-->
+<!--                android:id="@+id/applePlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/apple" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/applePlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/applePlantPic"/>-->
 
-            <ImageView
-                android:id="@+id/blueberryPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/blueberry" />
+<!--        </RelativeLayout>-->
 
-            <TextView
-                android:id="@+id/blueberryPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/blueberryPlantPic"
-                android:text=""
-                android:textAlignment="center"
-                android:textSize="20sp" />
+<!--        &lt;!&ndash;Blueberry&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/blueberryGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="12dp"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            >-->
 
+<!--            <ImageView-->
+<!--                android:id="@+id/blueberryPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/blueberry" />-->
 
-        </RelativeLayout>
-
-        <!--cherry-->
-        <RelativeLayout
-            android:id="@+id/cherryGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
-
-            >
-
-            <ImageView
-                android:id="@+id/cherryPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/cherry" />
-            <TextView
-                android:id="@+id/cherryPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/cherryPlantPic"/>
+<!--            <TextView-->
+<!--                android:id="@+id/blueberryPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/blueberryPlantPic"-->
+<!--                android:text=""-->
+<!--                android:textAlignment="center"-->
+<!--                android:textSize="20sp" />-->
 
 
+<!--        </RelativeLayout>-->
 
+<!--        &lt;!&ndash;cherry&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/cherryGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
 
-        </RelativeLayout>
+<!--            >-->
 
-        <!--corn-->
-        <RelativeLayout
-            android:id="@+id/cornGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
-
-            >
-
-            <ImageView
-                android:id="@+id/cornPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/corn" />
-            <TextView
-                android:id="@+id/cornPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/cornPlantPic"/>
-        </RelativeLayout>
-
-        <!--grape-->
-        <RelativeLayout
-            android:id="@+id/grapeGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
-
-            >
-
-            <ImageView
-                android:id="@+id/grapePlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/grapes" />
-            <TextView
-                android:id="@+id/grapePlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/grapePlantPic"/>
-        </RelativeLayout>
-
-        <!--orange-->
-        <RelativeLayout
-            android:id="@+id/orangeGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
-
-            >
-
-            <ImageView
-                android:id="@+id/orangePlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/orange" />
-            <TextView
-                android:id="@+id/orangePlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/orangePlantPic"/>
+<!--            <ImageView-->
+<!--                android:id="@+id/cherryPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/cherry" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/cherryPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/cherryPlantPic"/>-->
 
 
 
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
-        <!--peach-->
-        <RelativeLayout
-            android:id="@+id/peachGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
+<!--        &lt;!&ndash;corn&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/cornGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
 
-            >
+<!--            >-->
 
-            <ImageView
-                android:id="@+id/peachPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/peach" />
-            <TextView
-                android:id="@+id/peachPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/peachPlantPic"/>
-        </RelativeLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/cornPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/corn" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/cornPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/cornPlantPic"/>-->
+<!--        </RelativeLayout>-->
 
-        <!--pepper bell-->
-        <RelativeLayout
-            android:id="@+id/pepperBellGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
+<!--        &lt;!&ndash;grape&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/grapeGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
 
-            >
+<!--            >-->
 
-            <ImageView
-                android:id="@+id/pepperBellPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pepper" />
-            <TextView
-                android:id="@+id/pepperBellPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/pepperBellPlantPic"/>
-        </RelativeLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/grapePlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/grapes" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/grapePlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/grapePlantPic"/>-->
+<!--        </RelativeLayout>-->
 
-        <!--potato-->
-        <RelativeLayout
-            android:id="@+id/potatoGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
+<!--        &lt;!&ndash;orange&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/orangeGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
 
-            >
+<!--            >-->
 
-            <ImageView
-                android:id="@+id/potatoPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/potato" />
-            <TextView
-                android:id="@+id/potatoPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/potatoPlantPic"/>
-
-
-
-
-        </RelativeLayout>
-
-        <!--raspberry-->
-        <RelativeLayout
-            android:id="@+id/raspberryGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
-
-            >
-
-            <ImageView
-                android:id="@+id/raspberryPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/raspberry" />
-            <TextView
-                android:id="@+id/raspberryPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/raspberryPlantPic"/>
+<!--            <ImageView-->
+<!--                android:id="@+id/orangePlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/orange" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/orangePlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/orangePlantPic"/>-->
 
 
 
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
-        <!--peach-->
-        <RelativeLayout
-            android:id="@+id/soybeanGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
+<!--        &lt;!&ndash;peach&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/peachGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
 
-            >
+<!--            >-->
 
-            <ImageView
-                android:id="@+id/soybeanPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/soybean" />
-            <TextView
-                android:id="@+id/soybeanPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/soybeanPlantPic"/>
-        </RelativeLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/peachPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/peach" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/peachPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/peachPlantPic"/>-->
+<!--        </RelativeLayout>-->
 
-        <!--strawberry-->
-        <RelativeLayout
-            android:id="@+id/strawberryGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
+<!--        &lt;!&ndash;pepper bell&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/pepperBellGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
 
-            >
+<!--            >-->
 
-            <ImageView
-                android:id="@+id/strawberryPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/strawberry" />
-            <TextView
-                android:id="@+id/strawberryPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/strawberryPlantPic"/>
-        </RelativeLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/pepperBellPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/pepper" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/pepperBellPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/pepperBellPlantPic"/>-->
+<!--        </RelativeLayout>-->
 
-        <!--tomato-->
-        <RelativeLayout
-            android:id="@+id/tomatoGrp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/design_1"
-            android:layout_margin="12dp"
+<!--        &lt;!&ndash;potato&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/potatoGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
 
-            >
+<!--            >-->
 
-            <ImageView
-                android:id="@+id/tomatoPlantPic"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/tomato" />
-            <TextView
-                android:id="@+id/tomatoPlantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:layout_below="@id/tomatoPlantPic"/>
-        </RelativeLayout>
-
+<!--            <ImageView-->
+<!--                android:id="@+id/potatoPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/potato" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/potatoPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/potatoPlantPic"/>-->
 
 
-    </LinearLayout>
+
+
+<!--        </RelativeLayout>-->
+
+<!--        &lt;!&ndash;raspberry&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/raspberryGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/raspberryPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/raspberry" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/raspberryPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/raspberryPlantPic"/>-->
+
+
+
+
+<!--        </RelativeLayout>-->
+
+<!--        &lt;!&ndash;peach&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/soybeanGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/soybeanPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/soybean" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/soybeanPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/soybeanPlantPic"/>-->
+<!--        </RelativeLayout>-->
+
+<!--        &lt;!&ndash;strawberry&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/strawberryGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/strawberryPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/strawberry" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/strawberryPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/strawberryPlantPic"/>-->
+<!--        </RelativeLayout>-->
+
+<!--        &lt;!&ndash;tomato&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/tomatoGrp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/design_1"-->
+<!--            android:layout_margin="12dp"-->
+
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/tomatoPlantPic"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="180dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:src="@drawable/tomato" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/tomatoPlantName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_below="@id/tomatoPlantPic"/>-->
+<!--        </RelativeLayout>-->
+
+
+
+<!--    </LinearLayout>-->
 
 </ScrollView>

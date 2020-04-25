@@ -18,14 +18,13 @@ public class Reports extends AppCompatActivity {
     }
 
 
-    //TODO menu bar
+    /** Menu Bar **/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent=null;
