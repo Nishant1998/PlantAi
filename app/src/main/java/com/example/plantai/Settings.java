@@ -1,16 +1,22 @@
 package com.example.plantai;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.File;
 
 public class Settings extends AppCompatActivity {
 
@@ -19,6 +25,12 @@ public class Settings extends AppCompatActivity {
     int selected_lang;
 
     TextView textView0,textView1;
+    TextView delReport0,delReport1;
+    AlertDialog.Builder builder;
+    private String cancle;
+    private String ok,deleted;
+    DatabaseHelper myDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +38,10 @@ public class Settings extends AppCompatActivity {
 
         textView0 = findViewById(R.id.setting_head);
         textView1 = findViewById(R.id.setting_info);
+        delReport0 = findViewById(R.id.delreport_head);
+        delReport1 = findViewById(R.id.delreport_info);
+        builder = new AlertDialog.Builder(Settings.this);
+        myDB = new DatabaseHelper(this);
 
         //get setting and change language
         selected_lang = load_setting();
@@ -53,8 +69,8 @@ public class Settings extends AppCompatActivity {
         Intent intent=null;
         switch (item.getItemId())
         {
-            case R.id.op_profile:
-                intent = new Intent(this,profile.class);
+            case R.id.op_all_diseases:
+                intent = new Intent(this, AllDiseases.class);
                 startActivity(intent);
                 break;
             case R.id.op_reports:
@@ -95,18 +111,62 @@ public class Settings extends AppCompatActivity {
                 System.out.println("CASE 0 ***");
                 textView0.setText(getString(R.string.sele_lan_0));
                 textView1.setText(getString(R.string.english));
+                delReport0.setText(getString(R.string.menu_history_0));
+                delReport1.setText(getString(R.string.del_history_0));
+                builder.setTitle(getString(R.string.are_you_sure_0));
+                builder.setMessage(getString(R.string.all_his_willbe_del_0));
+                ok = getString(R.string.ok_0);
+                cancle = getString(R.string.cancel_0);
+                deleted = getString(R.string.all_history_del_0);
                 break;
             case 1:
                 System.out.println("CASE 1 ***");
                 textView0.setText(getString(R.string.sele_lan_1));
                 textView1.setText(getString(R.string.hindi));
+                delReport0.setText(getString(R.string.menu_history_1));
+                delReport1.setText(getString(R.string.del_history_1));
+                builder.setTitle(getString(R.string.are_you_sure_1));
+                builder.setMessage(getString(R.string.all_his_willbe_del_1));
+                ok = getString(R.string.ok_1);
+                cancle = getString(R.string.cancel_1);
+                deleted = getString(R.string.all_history_del_1);
                 break;
             case 2:
                 System.out.println("CASE 2 ***");
                 textView0.setText(getString(R.string.sele_lan_2));
                 textView1.setText(getString(R.string.marathi));
+                delReport0.setText(getString(R.string.menu_history_2));
+                delReport1.setText(getString(R.string.del_history_2));
+                builder.setTitle(getString(R.string.are_you_sure_2));
+                builder.setMessage(getString(R.string.all_his_willbe_del_2));
+                ok = getString(R.string.ok_2);
+                cancle = getString(R.string.cancel_2);
+                deleted = getString(R.string.all_history_del_2);
                 break;
         }
     }
 
+    public void clickDelReportSetting(View view) {
+        builder.setPositiveButton(ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                myDB.deleteAllData();
+                //delete images
+                File dir = new File(Environment.getExternalStorageDirectory()
+                        + "/Android/PlantAi/AllImages");
+                if (dir.isDirectory())
+                {
+                    String[] children = dir.list();
+                    for (int i = 0; i < children.length; i++)
+                    {
+                        new File(dir, children[i]).delete();
+                    }
+                }
+                Toast.makeText(Settings.this,deleted,Toast.LENGTH_SHORT).show();
+            }
+        }).setNegativeButton(cancle, null);
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 }

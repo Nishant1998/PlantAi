@@ -2,27 +2,21 @@ package com.example.plantai;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.sql.Date;
+import org.json.JSONException;
+
 import java.util.ArrayList;
 
-public class Reports extends AppCompatActivity implements ReportCardsAdapter.ReportCardOnClickListener {
-
-    DatabaseHelper myDB;
+public class AllDiseases extends AppCompatActivity implements DiseaseCardsAdapter.DiseaseCardOnClickListener{
 
     private static final String SHARED = "Settings";
     private static final String SHARED_APP_LANG = "app_lang";
@@ -31,73 +25,82 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<ReportCard> reportCardList;
+    private ArrayList<DiseaseCard> diseaseCardList;
     private String[] diseaseName = new String[38];
-    ArrayList<Integer> id = new ArrayList<>();
 
-    CardView cardView;
-    private TextView empText;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reports);
-
+        setContentView(R.layout.activity_all_diseases);
 
         __init__();
         selected_lang = load_setting();
         setLang(selected_lang);
 
         //genrate data
-        viewAll();
-        reportRecyclerViewConfig();
+        genrateDiseaseData();
+        diseaseRecyclerViewConfig();
     }
 
-    private void genrateReportData(String diseaseName, String date) {
-        reportCardList.add(new ReportCard(diseaseName, date));
-    }
-
-    private void reportRecyclerViewConfig() {
+    private void diseaseRecyclerViewConfig() {
         //config
-        recyclerView = findViewById(R.id.recyclerViewReports);
+        recyclerView = findViewById(R.id.recyclerViewDisease);
 
         //performance
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
-        adapter = new ReportCardsAdapter(reportCardList, this);
+        adapter = new DiseaseCardsAdapter(diseaseCardList, this);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
 
-    public void viewAll() {
-        Cursor cursor = myDB.getAllData();
-
-        if (cursor.getCount() == 0) {
-            cardView.setVisibility(View.VISIBLE);
-        }
-        else {cardView.setVisibility(View.GONE);}
-
-
-        while (cursor.moveToNext()) {
-            int id = cursor.getInt(0);
-            this.id.add(id);
-            String date = cursor.getString(1);
-            String time = cursor.getString(2);
-            int max = cursor.getInt(3);
-
-            genrateReportData(diseaseName[max], date + " " + time);
-        }
-
+    private void genrateDiseaseData() {
+        diseaseCardList = new ArrayList<>();
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp01, diseaseName[0], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp02, diseaseName[1], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp03, diseaseName[2], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp04, diseaseName[3], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp05, diseaseName[4], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp06, diseaseName[5], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp07, diseaseName[6], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp08, diseaseName[7], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp09, diseaseName[8], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp10, diseaseName[9], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp11, diseaseName[10], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp12, diseaseName[11], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp13, diseaseName[12], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp14, diseaseName[13], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp15, diseaseName[14], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp16, diseaseName[15], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp17, diseaseName[16], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp18, diseaseName[17], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp19, diseaseName[18], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp20, diseaseName[19], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp21, diseaseName[20], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp22, diseaseName[21], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp23, diseaseName[22], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp24, diseaseName[23], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp25, diseaseName[24], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp26, diseaseName[25], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp27, diseaseName[26], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp28, diseaseName[27], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp29, diseaseName[28], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp30, diseaseName[29], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp31, diseaseName[30], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp32, diseaseName[31], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp33, diseaseName[32], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp34, diseaseName[33], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp35, diseaseName[34], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp36, diseaseName[35], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp37, diseaseName[36], ""));
+        diseaseCardList.add(new DiseaseCard(R.drawable.dp38, diseaseName[37], ""));
     }
 
     private void __init__() {
-        myDB = new DatabaseHelper(this);
-        reportCardList = new ArrayList<>();
-        cardView = findViewById(R.id.notScannedYet);
 
-        empText = findViewById(R.id.emptyReportText);
     }
 
     private void setLang(int selected_lang) {
@@ -142,7 +145,6 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
                     diseaseName[35] = getString(R.string.dname_36_0);
                     diseaseName[36] = getString(R.string.dname_37_0);
                     diseaseName[37] = getString(R.string.dname_38_0);
-                    empText.setText(getString(R.string.not_scan_yet_0));
                 }
             }
             break;
@@ -186,7 +188,6 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
                     diseaseName[35] = getString(R.string.dname_36_1);
                     diseaseName[36] = getString(R.string.dname_37_1);
                     diseaseName[37] = getString(R.string.dname_38_1);
-                    empText.setText(getString(R.string.not_scan_yet_1));
                 }
             }
             break;
@@ -230,7 +231,6 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
                     diseaseName[35] = getString(R.string.dname_36_2);
                     diseaseName[36] = getString(R.string.dname_37_2);
                     diseaseName[37] = getString(R.string.dname_38_2);
-                    empText.setText(getString(R.string.not_scan_yet_2));
                 }
             }
             break;
@@ -243,43 +243,42 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
         return i;
     }
 
+    @Override
+    public void OnDiseaseCardClick(int position) {
+        Intent intent = new Intent(AllDiseases.this, AboutDisease.class);
+        intent.putExtra("did", position+1);
+        startActivity(intent);
+    }
 
-    /**
-     * Menu Bar
-     **/
+    //TODO MENU
+    //TODO menu bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        inflater.inflate(R.menu.menu,menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent = null;
-        switch (item.getItemId()) {
+        Intent intent=null;
+        switch (item.getItemId())
+        {
             case R.id.op_all_diseases:
                 intent = new Intent(this, AllDiseases.class);
                 break;
             case R.id.op_reports:
-                intent = new Intent(this, Reports.class);
+                intent = new Intent(this,Reports.class);
                 break;
             case R.id.op_setting:
-                intent = new Intent(this, Settings.class);
+                intent = new Intent(this,Settings.class);
                 break;
             case R.id.op_about:
-                intent = new Intent(this, About.class);
+                intent = new Intent(this,About.class);
                 break;
 
         }
         startActivity(intent);
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void OnReportCardClick(int position) {
-        Intent intent = new Intent(Reports.this,ReportD.class);
-        intent.putExtra("Col_id",id.get(position));
-        startActivity(intent);
     }
 }

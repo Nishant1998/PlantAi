@@ -35,5 +35,32 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="385dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/design_1"
+        android:padding="6dp"
+        android:onClick="clickDelReportSetting">
+
+        <TextView
+            android:id="@+id/delreport_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_history_0"
+            android:textColor="@color/colorBlack"/>
+
+        <TextView
+            android:id="@+id/delreport_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="23dp"
+            android:text="@string/del_history_2"
+            android:textColor="@color/colorBlue"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
 
 </LinearLayout>

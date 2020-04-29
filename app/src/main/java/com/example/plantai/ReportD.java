@@ -1,54 +1,37 @@
 package com.example.plantai;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
+import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.yalantis.ucrop.util.FileUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
-import java.io.IOException;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+public class ReportD extends AppCompatActivity implements View.OnClickListener, DiseaseCardsAdapter.DiseaseCardOnClickListener{
 
+    private static final String TAG = "ReportD";
 
-public class Result extends AppCompatActivity implements View.OnClickListener, DiseaseCardsAdapter.DiseaseCardOnClickListener {
-    private static final String TAG = "Result";
     private static final String SHARED = "Settings";
     private static final String SHARED_APP_LANG = "app_lang";
     private int selected_lang;
-    private String jsonData;
-    private int[] max = new int[3];
-    private Double[] probability = new Double[38];
+
     private ImageButton ib;
-    private JSONArray jprob, jmax,array;
+    private TextView dateAndTime;
     private ImageView uiv;
 
     private RecyclerView recyclerView;
@@ -58,37 +41,48 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
     private String[] diseaseName = new String[38];
 
     DatabaseHelper myDB;
+    int[] max = new int[3];
+    private String date,time,path=null;
+    int[] prb = new int[3];
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+        setContentView(R.layout.activity_report_d);
+
         __init__();
         selected_lang = load_setting();
         setLang(selected_lang);
 
-        jsonData = getIntent().getStringExtra("jsonresult");
-        Log.e("RESULT FROM RESULT ", jsonData);
-        try {
-            array = new JSONArray(jsonData);
-            jmax = (JSONArray) array.get(1);
-            jprob = (JSONArray) array.get(2);
-            for (int i = 0; i <= 2; i++) {
-                max[i] = (int) jmax.get(i);
-//                probability[i] = (Double) jprob.get(max[i]);
-//                probability[i] *= 100;
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        int id = getIntent().getIntExtra("Col_id",0);
 
-//        Log.d("max", probability[0] + " " + probability[1] + " " + probability[2]);
+
+        Cursor cursor = myDB.getData(id+"");
+        String data = null;
+        if (cursor.moveToNext()) {
+            date = cursor.getString(1);
+            time = cursor.getString(2);
+            max[0] = cursor.getInt(3);
+            max[1] = cursor.getInt(4);
+            max[2] = cursor.getInt(5);
+            prb[0] = cursor.getInt(6);
+            prb[1] = cursor.getInt(7);
+            prb[2] = cursor.getInt(8);
+            path = cursor.getString(9);
+        }
 
         //SET USER Image View
         {
-            File imgFile = new File(Environment.getExternalStorageDirectory()
-                    + "/Android/PlantAi/test.jpg");
+            File imgFile = new File(path);
+
+            Log.d(TAG, "onCreate: PATH" + path);
 
             if (imgFile.exists()) {
                 Uri imageUri = Uri.fromFile(imgFile);
@@ -98,6 +92,7 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
             }
         }
 
+        dateAndTime.setText(date + " " + time);
 
         //genrate data
         try {
@@ -107,67 +102,12 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
         }
         diseaseRecyclerViewConfig();
 
-        try {
-            addData();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
-    }
-
-    private void addData() throws JSONException {
-        Date d = Calendar.getInstance().getTime();
-        String date = DateFormat.getDateInstance().format(d);
-        String time = DateFormat.getTimeInstance().format(d);
-        int p1 = (int) Math.round((double) jprob.get(max[0]) * 100);
-        int p2 = (int) Math.round((double) jprob.get(max[1]) * 100);
-        int p3 = (int) Math.round((double) jprob.get(max[2]) * 100);
-        String path = saveImage();
-
-        boolean isInserted = myDB.insertData(date,time,max[0],max[1],max[2],p1,p2,p3,path,array.toString());
-        if (isInserted == true) {
-            Log.i(TAG, "addData: DATA INSERTED");
-        } else {
-            Log.e(TAG, "addData: DATA NOT INSERTED : ERROR");
-        }
-    }
-
-    private String saveImage() {
-        String sourcePath,destinationPath="";
-
-        File folder = new File(Environment.getExternalStorageDirectory()
-                + "/Android/PlantAi/AllImages");
-        boolean success = true;
-        if (!folder.exists()) {
-            success = folder.mkdirs();
-        }
-        if (success) {
-            Log.i(TAG, "saveImage: Folder Created");
-            sourcePath = Environment.getExternalStorageDirectory() + "/Android/PlantAi/test.jpg";
-            File source = new File(sourcePath);
-
-            destinationPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/PlantAi/AllImages/";
-            destinationPath += Calendar.getInstance().getTimeInMillis() + ".jpg";
-            File destination = new File(destinationPath);
-            try
-            {
-                FileUtils.copyFile(sourcePath, destinationPath);
-                Log.i(TAG, "saveImage: Imaged Saved ");
-            }
-            catch (IOException e)
-            {
-                Log.e(TAG, "saveImage: Image File Not Moved ===>");
-                e.printStackTrace();
-            }
-        } else {
-            Log.e(TAG, "saveImage: Folder Not Created");
-        }
-        return destinationPath;
     }
 
     private void diseaseRecyclerViewConfig() {
         //config
-        recyclerView = findViewById(R.id.recyclerViewDisease);
+        recyclerView = findViewById(R.id.recyclerViewDiseaseReport);
 
         //performance
         recyclerView.setHasFixedSize(true);
@@ -176,131 +116,136 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-
     }
 
-
     private void genrateDiseaseData() throws JSONException {
-        diseaseCardList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             switch (max[i]) {
                 case 0:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp01, diseaseName[0], Math.round((double) jprob.get(0) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp01, diseaseName[0], prb[i] + "%"));
                     break;
                 case 1:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp02, diseaseName[1], Math.round((double) jprob.get(1) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp02, diseaseName[1], prb[i] + "%"));
                     break;
                 case 2:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp03, diseaseName[2], Math.round((double) jprob.get(2) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp03, diseaseName[2], prb[i] + "%"));
                     break;
                 case 3:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp04, diseaseName[3], Math.round((double) jprob.get(3) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp04, diseaseName[3], prb[i] + "%"));
                     break;
                 case 4:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp05, diseaseName[4], Math.round((double) jprob.get(4) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp05, diseaseName[4], prb[i] + "%"));
                     break;
                 case 5:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp06, diseaseName[5], Math.round((double) jprob.get(5) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp06, diseaseName[5], prb[i] + "%"));
                     break;
                 case 6:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp07, diseaseName[6], Math.round((double) jprob.get(6) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp07, diseaseName[6], prb[i] + "%"));
                     break;
                 case 7:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp08, diseaseName[7], Math.round((double) jprob.get(7) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp08, diseaseName[7], prb[i] + "%"));
                     break;
                 case 8:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp09, diseaseName[8], Math.round((double) jprob.get(8) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp09, diseaseName[8], prb[i] + "%"));
                     break;
                 case 9:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp10, diseaseName[9], Math.round((double) jprob.get(9) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp10, diseaseName[9], prb[i] + "%"));
                     break;
                 case 10:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp11, diseaseName[10], Math.round((double) jprob.get(10) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp11, diseaseName[10], prb[i] + "%"));
                     break;
                 case 11:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp12, diseaseName[11], Math.round((double) jprob.get(11) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp12, diseaseName[11], prb[i] + "%"));
                     break;
                 case 12:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp13, diseaseName[12], Math.round((double) jprob.get(12) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp13, diseaseName[12], prb[i] + "%"));
                     break;
                 case 13:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp14, diseaseName[13], Math.round((double) jprob.get(13) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp14, diseaseName[13], prb[i] + "%"));
                     break;
                 case 14:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp15, diseaseName[14], Math.round((double) jprob.get(14) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp15, diseaseName[14], prb[i] + "%"));
                     break;
                 case 15:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp16, diseaseName[15], Math.round((double) jprob.get(15) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp16, diseaseName[15], prb[i] + "%"));
                     break;
                 case 16:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp17, diseaseName[16], Math.round((double) jprob.get(16) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp17, diseaseName[16], prb[i] + "%"));
                     break;
                 case 17:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp18, diseaseName[17], Math.round((double) jprob.get(17) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp18, diseaseName[17], prb[i] + "%"));
                     break;
                 case 18:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp19, diseaseName[18], Math.round((double) jprob.get(18) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp19, diseaseName[18], prb[i] + "%"));
                     break;
                 case 19:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp20, diseaseName[19], Math.round((double) jprob.get(19) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp20, diseaseName[19], prb[i] + "%"));
                     break;
                 case 20:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp21, diseaseName[20], Math.round((double) jprob.get(20) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp21, diseaseName[20], prb[i] + "%"));
                     break;
                 case 21:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp22, diseaseName[21], Math.round((double) jprob.get(21) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp22, diseaseName[21], prb[i] + "%"));
                     break;
                 case 22:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp23, diseaseName[22], Math.round((double) jprob.get(22) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp23, diseaseName[22], prb[i] + "%"));
                     break;
                 case 23:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp24, diseaseName[23], Math.round((double) jprob.get(23) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp24, diseaseName[23], prb[i] + "%"));
                     break;
                 case 24:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp25, diseaseName[24], Math.round((double) jprob.get(24) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp25, diseaseName[24], prb[i] + "%"));
                     break;
                 case 25:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp26, diseaseName[25], Math.round((double) jprob.get(25) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp26, diseaseName[25], prb[i] + "%"));
                     break;
                 case 26:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp27, diseaseName[26], Math.round((double) jprob.get(26) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp27, diseaseName[26], prb[i] + "%"));
                     break;
                 case 27:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp28, diseaseName[27], Math.round((double) jprob.get(27) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp28, diseaseName[27], prb[i] + "%"));
                     break;
                 case 28:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp29, diseaseName[28], Math.round((double) jprob.get(28) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp29, diseaseName[28], prb[i] + "%"));
                     break;
                 case 29:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp30, diseaseName[29], Math.round((double) jprob.get(29) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp30, diseaseName[29], prb[i] + "%"));
                     break;
                 case 30:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp31, diseaseName[30], Math.round((double) jprob.get(30) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp31, diseaseName[30], prb[i] + "%"));
                     break;
                 case 31:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp32, diseaseName[31], Math.round((double) jprob.get(31) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp32, diseaseName[31], prb[i] + "%"));
                     break;
                 case 32:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp33, diseaseName[32], Math.round((double) jprob.get(32) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp33, diseaseName[32], prb[i] + "%"));
                     break;
                 case 33:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp34, diseaseName[33], Math.round((double) jprob.get(33) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp34, diseaseName[33], prb[i] + "%"));
                     break;
                 case 34:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp35, diseaseName[34], Math.round((double) jprob.get(34) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp35, diseaseName[34], prb[i] + "%"));
                     break;
                 case 35:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp36, diseaseName[35], Math.round((double) jprob.get(35) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp36, diseaseName[35], prb[i] + "%"));
                     break;
                 case 36:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp37, diseaseName[36], Math.round((double) jprob.get(36) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp37, diseaseName[36], prb[i] + "%"));
                     break;
                 case 37:
-                    diseaseCardList.add(new DiseaseCard(R.drawable.dp38, diseaseName[37], Math.round((double) jprob.get(37) * 100) + "%"));
+                    diseaseCardList.add(new DiseaseCard(R.drawable.dp38, diseaseName[37], prb[i] + "%"));
                     break;
 
             }
         }
+        Log.d(TAG, "genrateDiseaseData: "+ diseaseCardList);
+    }
+
+    //TODO Load Setting
+    int load_setting() {
+        SharedPreferences mySharedPreference = getSharedPreferences(SHARED, MODE_PRIVATE);
+        int i = mySharedPreference.getInt(SHARED_APP_LANG, 0);
+        return i;
     }
 
     private void setLang(int selected_lang) {
@@ -438,37 +383,26 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
     }
 
     private void __init__() {
-        uiv = findViewById(R.id.userImageView);
-        ib = findViewById(R.id.imageButton);
+        ib = findViewById(R.id.imageButtonReport);
+        uiv = findViewById(R.id.userImageViewReport);
+        recyclerView = findViewById(R.id.recyclerViewReports);
+        diseaseCardList = new ArrayList<>();
         myDB = new DatabaseHelper(this);
+        dateAndTime = findViewById(R.id.dateAndTimeTextReport);
     }
 
-    //TODO Load Setting
-    int load_setting() {
-        SharedPreferences mySharedPreference = getSharedPreferences(SHARED, MODE_PRIVATE);
-        int i = mySharedPreference.getInt(SHARED_APP_LANG, 0);
-        return i;
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(Result.this, Home.class);
-        startActivity(intent);
-    }
-
-    @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
         Intent intent = null;
-        switch (v.getId()) {
-            case R.id.imageButton: {
-                intent = new Intent(Result.this, Home.class);
+        switch (view.getId()) {
+            case R.id.imageButtonReport: {
+                intent = new Intent(ReportD.this, Reports.class);
                 Log.d("test", "image  Button press");
             }
             break;
-            case R.id.userImageView: {
-                intent = new Intent(Result.this, ImageSlider.class);
-                intent.putExtra("id", 999);
+            case R.id.userImageViewReport: {
+                intent = new Intent(ReportD.this, ImageSlider.class);
+                intent.putExtra("id", 998);
+                intent.putExtra("path",path);
             }
             break;
         }
@@ -477,7 +411,7 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
 
     @Override
     public void OnDiseaseCardClick(int position) {
-        Intent intent = new Intent(Result.this, AboutDisease.class);
+        Intent intent = new Intent(ReportD.this, AboutDisease.class);
         intent.putExtra("did", max[position]+1);
         startActivity(intent);
     }

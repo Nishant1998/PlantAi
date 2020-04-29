@@ -22,9 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AboutDisease"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
-            />
+        <activity android:name=".ReportD"></activity>
+        <activity
+            android:name=".AboutDisease"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
         <activity
             android:name=".ImageSlider"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
@@ -35,7 +36,7 @@
         <activity android:name=".About" />
         <activity android:name=".Settings" />
         <activity android:name=".Reports" />
-        <activity android:name=".profile" />
+        <activity android:name=".AllDiseases" />
         <activity android:name=".CropImage" />
         <activity android:name=".PlantD" />
         <activity android:name=".Home" />

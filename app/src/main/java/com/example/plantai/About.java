@@ -31,8 +31,8 @@ public class About extends AppCompatActivity {
         Intent intent=null;
         switch (item.getItemId())
         {
-            case R.id.op_profile:
-                intent = new Intent(this,profile.class);
+            case R.id.op_all_diseases:
+                intent = new Intent(this, AllDiseases.class);
                 break;
             case R.id.op_reports:
                 intent = new Intent(this,Reports.class);

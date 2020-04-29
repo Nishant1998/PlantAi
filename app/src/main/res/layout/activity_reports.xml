@@ -6,12 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".Reports">
 
-    <TextView
-        android:id="@+id/textView2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewReports"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c1c1c1"
+        android:padding="4dp"
+        android:scrollbars="vertical" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notScannedYet"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Reports"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="301dp" />
+        android:visibility="gone"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginLeft="45dp"
+                android:layout_width="210dp"
+                android:layout_height="244dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/plantpot" />
+
+            <TextView
+                android:id="@+id/emptyReportText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="You have not scanned any plant
+yet. Scan your plant now!"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
 </RelativeLayout>

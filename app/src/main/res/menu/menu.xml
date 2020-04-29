@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/op_profile"
-        android:title="Profile"
+        android:id="@+id/op_all_diseases"
+        android:title="All Diseases"
         />
 
 

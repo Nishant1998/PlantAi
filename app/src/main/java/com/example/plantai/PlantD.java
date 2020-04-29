@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -114,8 +113,8 @@ public class PlantD extends AppCompatActivity {
         Intent intent=null;
         switch (item.getItemId())
         {
-            case R.id.op_profile:
-                intent = new Intent(this,profile.class);
+            case R.id.op_all_diseases:
+                intent = new Intent(this, AllDiseases.class);
                 break;
             case R.id.op_reports:
                 intent = new Intent(this,Reports.class);

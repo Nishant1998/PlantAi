@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ReportD">
+
+    <RelativeLayout
+        android:id="@+id/imageUserRL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/userImageViewReport"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:onClick="onClick"
+            android:scaleType="centerCrop"/>
+
+        <ImageButton
+            android:id="@+id/imageButtonReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="3dp"
+            android:onClick="onClick"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/dateAndTimeTextReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="18sp"
+        android:layout_margin="8dp"
+        android:textColor="@color/colorBlack"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDiseaseReport"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c1c1c1"
+        android:scrollbars="vertical"
+        android:padding="4dp"/>
+
+</LinearLayout>
