@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Intro2">
+
+
+
+    <ImageView
+        android:layout_width="87dp"
+        android:layout_height="22dp"
+        android:layout_above="@+id/rl2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginStart="162dp"
+        android:layout_marginLeft="147dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="1dp"
+        android:src="@drawable/grp3" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dp"
+        android:id="@+id/rl2"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:background="@drawable/button_fill"
+            android:onClick="nextClick"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="382dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="347dp"
+        app:srcCompat="@drawable/intrologo" />
+
+    <TextView
+        android:id="@+id/intro1_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="227dp"
+        android:padding="20dp"
+        android:text="@string/intro_h1_0"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/intro1_dis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="152dp"
+        android:padding="20dp"
+        android:text="@string/intro_c1_0"
+        android:textSize="20sp" />
+
+</RelativeLayout>
