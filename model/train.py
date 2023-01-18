@@ -99,7 +99,7 @@ def train_model(cfg, model, criterion, optimizer, dataset):
                     loss = criterion(outputs, labels)
                     val_loss_meter.update(loss.item())
 
-                    if (i + 1) % cfg.SOLVER.LOG_PERIOD == 0:
+                    if (i + 1) % (cfg.SOLVER.LOG_PERIOD / cfg.DATALOADER.K_FOLD) == 0:
                         logger.info(f"Validation :: Epoch : {epoch+1}/{cfg.SOLVER.MAX_EPOCHS}, Iter : {i + 1}/{len(val_loader)}, "
                                     f"loss : {val_loss_meter.val:.4f}, acc : {val_acc_meter.val:.4f}")
 
