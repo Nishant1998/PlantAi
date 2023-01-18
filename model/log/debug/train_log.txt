@@ -1,6 +1,6 @@
-2023-01-17 20:46:28 transreid INFO: Saving model in the path :log/debug
-2023-01-17 20:46:28 transreid INFO: Config
-2023-01-17 20:46:28 transreid INFO: DATALOADER:
+2023-01-17 21:49:50 transreid INFO: Saving model in the path :log/debug
+2023-01-17 21:49:50 transreid INFO: Config
+2023-01-17 21:49:50 transreid INFO: DATALOADER:
   BATCH_SIZE: 4
   IMAGE_SIZE: [256, 256]
   K_FOLD: 10
@@ -18,145 +18,145 @@ SOLVER:
   PATIENCE: 5
   SEED: 0
   TOLERANCE: 0.01
-2023-01-17 20:46:29 transreid INFO: Fold : 0
-2023-01-17 20:46:29 transreid INFO: Starting Training.
-2023-01-17 20:46:39 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 6.9652
-2023-01-17 20:46:40 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 6.1178
-2023-01-17 20:46:41 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 6.4810
-2023-01-17 20:46:41 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 6.1142
-2023-01-17 20:46:42 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 6.5035
-2023-01-17 20:46:42 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 6.8996, acc : 0.0000
-2023-01-17 20:46:43 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 4.8356
-2023-01-17 20:46:43 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 4.1629
-2023-01-17 20:46:44 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 4.9304
-2023-01-17 20:46:44 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 3.5668
-2023-01-17 20:46:45 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 4.9139
-2023-01-17 20:46:45 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 6.8621, acc : 0.0000
-2023-01-17 20:46:48 transreid INFO: Fold : 1
-2023-01-17 20:46:48 transreid INFO: Starting Training.
-2023-01-17 20:46:48 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 2.9043
-2023-01-17 20:46:49 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 4.9396
-2023-01-17 20:46:49 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 3.2193
-2023-01-17 20:46:50 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 2.8244
-2023-01-17 20:46:50 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 3.6410
-2023-01-17 20:46:50 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 6.6192, acc : 0.0000
-2023-01-17 20:46:51 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 3.5705
-2023-01-17 20:46:51 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 2.4317
-2023-01-17 20:46:52 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.4368
-2023-01-17 20:46:52 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.5020
-2023-01-17 20:46:53 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 2.9007
-2023-01-17 20:46:53 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 6.2651, acc : 0.0000
-2023-01-17 20:46:54 transreid INFO: Fold : 2
-2023-01-17 20:46:54 transreid INFO: Starting Training.
-2023-01-17 20:46:55 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 2.8341
-2023-01-17 20:46:55 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 2.0911
-2023-01-17 20:46:55 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.3915
-2023-01-17 20:46:56 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.9021
-2023-01-17 20:46:56 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 2.9537
-2023-01-17 20:46:57 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 5.8424, acc : 0.0000
-2023-01-17 20:46:57 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.5451
-2023-01-17 20:46:58 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.6894
-2023-01-17 20:46:58 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.9910
-2023-01-17 20:46:59 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.4467
-2023-01-17 20:46:59 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.6554
-2023-01-17 20:46:59 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 5.3915, acc : 0.0000
-2023-01-17 20:47:01 transreid INFO: Fold : 3
-2023-01-17 20:47:01 transreid INFO: Starting Training.
-2023-01-17 20:47:01 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.9077
-2023-01-17 20:47:01 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.5279
-2023-01-17 20:47:02 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.3930
-2023-01-17 20:47:02 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.4320
-2023-01-17 20:47:03 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.7463
-2023-01-17 20:47:03 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 4.9398, acc : 1.0000
-2023-01-17 20:47:04 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.5506
-2023-01-17 20:47:04 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.5993
-2023-01-17 20:47:04 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.3642
-2023-01-17 20:47:05 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.5921
-2023-01-17 20:47:05 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.5686
-2023-01-17 20:47:06 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 4.4054, acc : 1.0000
-2023-01-17 20:47:07 transreid INFO: Fold : 4
-2023-01-17 20:47:07 transreid INFO: Starting Training.
-2023-01-17 20:47:07 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.2936
-2023-01-17 20:47:08 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.3351
-2023-01-17 20:47:08 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.1819
-2023-01-17 20:47:08 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.3615
-2023-01-17 20:47:09 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.4573
-2023-01-17 20:47:09 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 3.8214, acc : 1.0000
-2023-01-17 20:47:10 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.7638
-2023-01-17 20:47:10 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.2788
-2023-01-17 20:47:10 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 0.9888
-2023-01-17 20:47:11 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.3685
-2023-01-17 20:47:11 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.6684
-2023-01-17 20:47:12 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 3.3292, acc : 1.0000
-2023-01-17 20:47:13 transreid INFO: Fold : 5
-2023-01-17 20:47:13 transreid INFO: Starting Training.
-2023-01-17 20:47:14 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.1590
-2023-01-17 20:47:14 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.6532
-2023-01-17 20:47:15 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.8510
-2023-01-17 20:47:15 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.5547
-2023-01-17 20:47:15 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.0766
-2023-01-17 20:47:16 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 2.9824, acc : 1.0000
-2023-01-17 20:47:16 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.6526
-2023-01-17 20:47:17 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.9380
-2023-01-17 20:47:17 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.5676
-2023-01-17 20:47:17 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.2982
-2023-01-17 20:47:18 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.4221
-2023-01-17 20:47:18 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 2.5624, acc : 1.0000
-2023-01-17 20:47:20 transreid INFO: Fold : 6
-2023-01-17 20:47:20 transreid INFO: Starting Training.
-2023-01-17 20:47:20 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.4270
-2023-01-17 20:47:21 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.5473
-2023-01-17 20:47:21 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.3866
-2023-01-17 20:47:21 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.4757
-2023-01-17 20:47:22 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.3613
-2023-01-17 20:47:22 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 2.4309, acc : 0.0000
-2023-01-17 20:47:23 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.5757
-2023-01-17 20:47:23 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.4908
-2023-01-17 20:47:24 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.2211
-2023-01-17 20:47:24 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.4795
-2023-01-17 20:47:25 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.1619
-2023-01-17 20:47:25 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 2.2099, acc : 0.0000
-2023-01-17 20:47:26 transreid INFO: Fold : 7
-2023-01-17 20:47:26 transreid INFO: Starting Training.
-2023-01-17 20:47:27 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.5842
-2023-01-17 20:47:27 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.6406
-2023-01-17 20:47:28 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.6408
-2023-01-17 20:47:28 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.3793
-2023-01-17 20:47:29 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.0702
-2023-01-17 20:47:29 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 1.8206, acc : 0.0000
-2023-01-17 20:47:30 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.4638
-2023-01-17 20:47:30 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.6287
-2023-01-17 20:47:31 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.3335
-2023-01-17 20:47:31 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.4493
-2023-01-17 20:47:32 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.5120
-2023-01-17 20:47:32 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 1.6223, acc : 0.0000
-2023-01-17 20:47:34 transreid INFO: Fold : 8
-2023-01-17 20:47:34 transreid INFO: Starting Training.
-2023-01-17 20:47:34 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.2974
-2023-01-17 20:47:34 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.1932
-2023-01-17 20:47:35 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.4323
-2023-01-17 20:47:35 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.3736
-2023-01-17 20:47:36 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.6786
-2023-01-17 20:47:36 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 1.7721, acc : 0.0000
-2023-01-17 20:47:37 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.2703
-2023-01-17 20:47:37 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.3243
-2023-01-17 20:47:38 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.3339
-2023-01-17 20:47:38 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.3778
-2023-01-17 20:47:38 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.5992
-2023-01-17 20:47:39 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 1.7107, acc : 1.0000
-2023-01-17 20:47:40 transreid INFO: Fold : 9
-2023-01-17 20:47:40 transreid INFO: Starting Training.
-2023-01-17 20:47:41 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.5680
-2023-01-17 20:47:41 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.3475
-2023-01-17 20:47:41 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.3169
-2023-01-17 20:47:42 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.6674
-2023-01-17 20:47:42 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.5641
-2023-01-17 20:47:43 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 1.5059, acc : 0.0000
-2023-01-17 20:47:43 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.6084
-2023-01-17 20:47:44 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.3591
-2023-01-17 20:47:44 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.3894
-2023-01-17 20:47:45 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.3946
-2023-01-17 20:47:45 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.3491
-2023-01-17 20:47:45 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 1.7340, acc : 0.0000
-2023-01-17 20:47:47 transreid INFO: Testing model
-2023-01-17 20:48:14 transreid INFO: Testing accuracy : 1
+2023-01-17 21:49:50 transreid INFO: Fold : 0
+2023-01-17 21:49:50 transreid INFO: Starting Training.
+2023-01-17 21:50:00 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 6.9652
+2023-01-17 21:50:01 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 6.1178
+2023-01-17 21:50:01 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 6.4810
+2023-01-17 21:50:02 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 6.1142
+2023-01-17 21:50:02 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 6.5035
+2023-01-17 21:50:03 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 6.8996, acc : 0.0000
+2023-01-17 21:50:03 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 4.8356
+2023-01-17 21:50:04 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 4.1629
+2023-01-17 21:50:04 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 4.9304
+2023-01-17 21:50:05 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 3.5668
+2023-01-17 21:50:05 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 4.9139
+2023-01-17 21:50:05 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 6.8621, acc : 0.0000
+2023-01-17 21:50:06 transreid INFO: Fold : 1
+2023-01-17 21:50:06 transreid INFO: Starting Training.
+2023-01-17 21:50:07 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 2.9043
+2023-01-17 21:50:07 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 4.9396
+2023-01-17 21:50:08 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 3.2193
+2023-01-17 21:50:08 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 2.8244
+2023-01-17 21:50:08 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 3.6410
+2023-01-17 21:50:09 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 6.6192, acc : 0.0000
+2023-01-17 21:50:09 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 3.5705
+2023-01-17 21:50:09 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 2.4317
+2023-01-17 21:50:10 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.4368
+2023-01-17 21:50:10 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.5020
+2023-01-17 21:50:11 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 2.9007
+2023-01-17 21:50:11 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 6.2651, acc : 0.0000
+2023-01-17 21:50:12 transreid INFO: Fold : 2
+2023-01-17 21:50:12 transreid INFO: Starting Training.
+2023-01-17 21:50:12 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 2.8341
+2023-01-17 21:50:13 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 2.0911
+2023-01-17 21:50:13 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.3915
+2023-01-17 21:50:14 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.9021
+2023-01-17 21:50:14 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 2.9537
+2023-01-17 21:50:15 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 5.8424, acc : 0.0000
+2023-01-17 21:50:15 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.5451
+2023-01-17 21:50:15 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.6894
+2023-01-17 21:50:16 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.9910
+2023-01-17 21:50:16 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.4467
+2023-01-17 21:50:17 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.6554
+2023-01-17 21:50:17 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 5.3915, acc : 0.0000
+2023-01-17 21:50:19 transreid INFO: Fold : 3
+2023-01-17 21:50:19 transreid INFO: Starting Training.
+2023-01-17 21:50:19 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.9077
+2023-01-17 21:50:20 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.5279
+2023-01-17 21:50:20 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.3930
+2023-01-17 21:50:20 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.4320
+2023-01-17 21:50:21 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.7463
+2023-01-17 21:50:21 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 4.9398, acc : 1.0000
+2023-01-17 21:50:22 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.5506
+2023-01-17 21:50:22 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.5993
+2023-01-17 21:50:23 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.3642
+2023-01-17 21:50:23 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.5921
+2023-01-17 21:50:23 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.5686
+2023-01-17 21:50:24 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 4.4054, acc : 1.0000
+2023-01-17 21:50:25 transreid INFO: Fold : 4
+2023-01-17 21:50:25 transreid INFO: Starting Training.
+2023-01-17 21:50:25 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.2936
+2023-01-17 21:50:26 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.3351
+2023-01-17 21:50:26 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.1819
+2023-01-17 21:50:27 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.3615
+2023-01-17 21:50:27 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.4573
+2023-01-17 21:50:27 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 3.8214, acc : 1.0000
+2023-01-17 21:50:28 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.7638
+2023-01-17 21:50:28 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.2788
+2023-01-17 21:50:29 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 0.9888
+2023-01-17 21:50:29 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.3685
+2023-01-17 21:50:30 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.6684
+2023-01-17 21:50:30 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 3.3292, acc : 1.0000
+2023-01-17 21:50:31 transreid INFO: Fold : 5
+2023-01-17 21:50:31 transreid INFO: Starting Training.
+2023-01-17 21:50:32 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.1590
+2023-01-17 21:50:32 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.6532
+2023-01-17 21:50:33 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.8510
+2023-01-17 21:50:33 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.5547
+2023-01-17 21:50:34 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.0766
+2023-01-17 21:50:34 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 2.9824, acc : 1.0000
+2023-01-17 21:50:35 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.6526
+2023-01-17 21:50:35 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.9380
+2023-01-17 21:50:36 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.5676
+2023-01-17 21:50:36 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.2982
+2023-01-17 21:50:37 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.4221
+2023-01-17 21:50:37 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 2.5624, acc : 1.0000
+2023-01-17 21:50:38 transreid INFO: Fold : 6
+2023-01-17 21:50:38 transreid INFO: Starting Training.
+2023-01-17 21:50:39 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.4270
+2023-01-17 21:50:39 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.5473
+2023-01-17 21:50:40 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.3866
+2023-01-17 21:50:40 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.4757
+2023-01-17 21:50:41 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.3613
+2023-01-17 21:50:41 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 2.4309, acc : 0.0000
+2023-01-17 21:50:41 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.5757
+2023-01-17 21:50:42 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.4908
+2023-01-17 21:50:42 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.2211
+2023-01-17 21:50:43 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.4795
+2023-01-17 21:50:43 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.1619
+2023-01-17 21:50:43 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 2.2099, acc : 0.0000
+2023-01-17 21:50:45 transreid INFO: Fold : 7
+2023-01-17 21:50:45 transreid INFO: Starting Training.
+2023-01-17 21:50:46 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.5842
+2023-01-17 21:50:46 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.6406
+2023-01-17 21:50:47 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.6408
+2023-01-17 21:50:47 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.3793
+2023-01-17 21:50:48 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.0702
+2023-01-17 21:50:48 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 1.8206, acc : 0.0000
+2023-01-17 21:50:48 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.4638
+2023-01-17 21:50:49 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.6287
+2023-01-17 21:50:49 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.3335
+2023-01-17 21:50:50 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.4493
+2023-01-17 21:50:50 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.5120
+2023-01-17 21:50:51 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 1.6223, acc : 0.0000
+2023-01-17 21:50:52 transreid INFO: Fold : 8
+2023-01-17 21:50:52 transreid INFO: Starting Training.
+2023-01-17 21:50:53 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.2974
+2023-01-17 21:50:53 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.1932
+2023-01-17 21:50:54 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.4323
+2023-01-17 21:50:54 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.3736
+2023-01-17 21:50:54 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.6786
+2023-01-17 21:50:55 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 1.7721, acc : 0.0000
+2023-01-17 21:50:55 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.2703
+2023-01-17 21:50:56 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.3243
+2023-01-17 21:50:56 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.3339
+2023-01-17 21:50:56 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.3778
+2023-01-17 21:50:57 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.5992
+2023-01-17 21:50:57 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 1.7107, acc : 1.0000
+2023-01-17 21:50:59 transreid INFO: Fold : 9
+2023-01-17 21:50:59 transreid INFO: Starting Training.
+2023-01-17 21:50:59 transreid INFO: Train :: Epoch : 1/2, Iter : 1/5, loss : 1.5680
+2023-01-17 21:51:00 transreid INFO: Train :: Epoch : 1/2, Iter : 2/5, loss : 1.3475
+2023-01-17 21:51:00 transreid INFO: Train :: Epoch : 1/2, Iter : 3/5, loss : 1.3169
+2023-01-17 21:51:00 transreid INFO: Train :: Epoch : 1/2, Iter : 4/5, loss : 1.6674
+2023-01-17 21:51:01 transreid INFO: Train :: Epoch : 1/2, Iter : 5/5, loss : 1.5641
+2023-01-17 21:51:01 transreid INFO: Validation :: Epoch : 1/2, Iter : 1/1, loss : 1.5059, acc : 0.0000
+2023-01-17 21:51:02 transreid INFO: Train :: Epoch : 2/2, Iter : 1/5, loss : 1.6084
+2023-01-17 21:51:02 transreid INFO: Train :: Epoch : 2/2, Iter : 2/5, loss : 1.3591
+2023-01-17 21:51:03 transreid INFO: Train :: Epoch : 2/2, Iter : 3/5, loss : 1.3894
+2023-01-17 21:51:03 transreid INFO: Train :: Epoch : 2/2, Iter : 4/5, loss : 1.3946
+2023-01-17 21:51:03 transreid INFO: Train :: Epoch : 2/2, Iter : 5/5, loss : 1.3491
+2023-01-17 21:51:04 transreid INFO: Validation :: Epoch : 2/2, Iter : 1/1, loss : 1.7340, acc : 0.0000
+2023-01-17 21:51:05 transreid INFO: Testing model
+2023-01-17 21:51:26 transreid INFO: Testing accuracy : 1
