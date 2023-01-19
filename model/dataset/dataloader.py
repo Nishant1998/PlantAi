@@ -30,8 +30,8 @@ def make_dataloader(cfg):
     train_dataset, test_dataset = torch.utils.data.random_split(plant_village_dataset, [train_size, test_size])
 
     # Define the data loaders
-    train_loader = DataLoader(train_dataset, batch_size=cfg.DATALOADER.BATCH_SIZE, shuffle=True, num_workers=4)
-    test_loader = DataLoader(test_dataset, batch_size=cfg.DATALOADER.BATCH_SIZE, shuffle=False, num_workers=4)
+    train_loader = DataLoader(train_dataset, batch_size=cfg.DATALOADER.BATCH_SIZE, shuffle=True, num_workers=2)
+    test_loader = DataLoader(test_dataset, batch_size=cfg.DATALOADER.BATCH_SIZE, shuffle=False, num_workers=2)
 
     # Apply the data transformation to the training set only
     train_dataset.dataset.transform = data_transforms
