@@ -1,3 +1,5 @@
+from random import random
+
 import torch
 from torch.utils.data import DataLoader
 from torchvision import transforms, datasets
@@ -6,14 +8,20 @@ from torchvision import transforms, datasets
 def make_dataloader(cfg):
     data_transforms = transforms.Compose([
         transforms.Resize(cfg.DATALOADER.IMAGE_SIZE),
+        transforms.RandomCrop(size=256, padding=16),
+        transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
+        transforms.RandomRotation(degrees=30),
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
+        transforms.RandomApply([transforms.RandomChoice([transforms.GaussianBlur(radius=random.uniform(0, 1)),
+                                                         transforms.GaussianNoise(stddev=random.uniform(0, 0.1))
+                                                         ])], p=0.5),
         transforms.ToTensor(),
         transforms.Normalize(cfg.DATASET.MEAN, cfg.DATASET.STD)
     ])
 
     # Load the Plant Village dataset
-    plant_village_dataset = datasets.ImageFolder(root=f"{cfg.DATASET.PATH}/{cfg.DATASET.NAME}", transform=data_transforms)
+    plant_village_dataset = datasets.ImageFolder(root=f"{cfg.DATASET.PATH}/{cfg.DATASET.NAME}", transform=transforms.ToTensor())
     num_classes = len(plant_village_dataset.classes)
 
     # Split the dataset into train and test sets
@@ -24,5 +32,8 @@ def make_dataloader(cfg):
     # Define the data loaders
     train_loader = DataLoader(train_dataset, batch_size=cfg.DATALOADER.BATCH_SIZE, shuffle=True, num_workers=4)
     test_loader = DataLoader(test_dataset, batch_size=cfg.DATALOADER.BATCH_SIZE, shuffle=False, num_workers=4)
+
+    # Apply the data transformation to the training set only
+    train_dataset.dataset.transform = data_transforms
 
     return train_loader, test_loader, train_dataset, test_dataset, num_classes
