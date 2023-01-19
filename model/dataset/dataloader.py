@@ -1,8 +1,18 @@
-from random import random
+import random
 
 import torch
 from torch.utils.data import DataLoader
 from torchvision import transforms, datasets
+
+
+class GaussianNoise(object):
+    def __init__(self, stddev):
+        self.stddev = stddev
+
+    def __call__(self, img):
+        noise = torch.randn(*img.shape) * self.stddev
+        noisy_img = img + noise
+        return noisy_img
 
 
 def make_dataloader(cfg):
@@ -13,8 +23,8 @@ def make_dataloader(cfg):
         transforms.RandomRotation(degrees=30),
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
-        transforms.RandomApply([transforms.RandomChoice([transforms.GaussianBlur(radius=random.uniform(0, 1)),
-                                                         transforms.GaussianNoise(stddev=random.uniform(0, 0.1))
+        transforms.RandomApply([transforms.RandomChoice([transforms.GaussianBlur(random.randint(1,5)*2+1),
+                                                         transforms.RandomApply([GaussianNoise(stddev=random.uniform(0, 0.1))], p=0.5)
                                                          ])], p=0.5),
         transforms.ToTensor(),
         transforms.Normalize(cfg.DATASET.MEAN, cfg.DATASET.STD)
