@@ -1,9 +1,8 @@
 import matplotlib.pyplot as plt
 
 
-def plot_acc_loss(epochs, title, accuracies, losses, path):
-    plt.plot(range(1, epochs + 1), accuracies, label='accuracy')
-    plt.plot(range(1, epochs + 1), losses, label='loss')
+def plot_acc_loss(epochs, title, data, path):
+    plt.plot(range(1, epochs + 1), data, label='accuracy')
     plt.legend()
     plt.xlabel('Epoch')
     plt.ylabel('Value')

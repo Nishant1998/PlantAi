@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 .*
+data/
+log/
+*.png

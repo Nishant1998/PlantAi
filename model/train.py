@@ -129,11 +129,16 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
                     break
 
         # plot graph
+        # def plot_acc_loss(epochs, title, data, path):
         torch.save(best_model.state_dict(), cfg.OUTPUT_DIR + '/best_model.pth')
-        plot_acc_loss(epoch+1, "Training Accuracy and Loss per Epoch",
-                      record_train_acc.values, record_train_loss.values, path=f"{cfg.OUTPUT_DIR}/{fold}_")
-        plot_acc_loss(epoch+1, "Validation Accuracy and Loss per Epoch",
-                      record_val_acc.values, record_val_loss.values, path=f"{cfg.OUTPUT_DIR}/{fold}_")
+        plot_acc_loss(epoch+1, "Training Accuracy per Epoch",
+                      record_train_acc.values, path=f"{cfg.OUTPUT_DIR}/{fold}_")
+        plot_acc_loss(epoch+1, "Training Loss per Epoch",
+                      record_train_loss.values, path=f"{cfg.OUTPUT_DIR}/{fold}_")
+        plot_acc_loss(epoch+1, "Validation Accuracy per Epoch",
+                      record_val_acc.values, path=f"{cfg.OUTPUT_DIR}/{fold}_")
+        plot_acc_loss(epoch+1, "Validation Loss per Epoch",
+                      record_val_loss.values, path=f"{cfg.OUTPUT_DIR}/{fold}_")
 
 
 def test_model(model, test_loader):
