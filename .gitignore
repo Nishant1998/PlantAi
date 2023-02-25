@@ -23,3 +23,4 @@ log/
 *.pyc
 *.pyc
 model/model/__pycache__/make_model.cpython-39.pyc
+*.pyc

@@ -207,7 +207,8 @@ if __name__ == '__main__':
     # Define the loss function and optimizer
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
-    scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10, verbose=True)
+    # scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10, verbose=True)
+    scheduler = StepLR(optimizer, step_size=7, gamma=0.1)
     train_model(cfg, model, criterion, optimizer, scheduler, train_dataset)
 
     test_model(model, test_loader)
