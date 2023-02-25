@@ -1,0 +1,24 @@
+MODEL:
+  MODEL_TYPE: resnet
+  MODEL_NAME: resnet50
+
+DATASET:
+  NAME: dataset
+  PATH: model/data
+  MEAN: [0.485, 0.456, 0.406]
+  STD: [0.229, 0.224, 0.225]
+
+DATALOADER:
+  K_FOLD: 10
+  BATCH_SIZE: 4
+  IMAGE_SIZE: [256, 256]
+
+SOLVER:
+  SEED: 0
+  MAX_EPOCHS: 2
+  LOG_PERIOD: 1
+  TOLERANCE: 0.01
+  PATIENCE: 5
+  MIN_FOLD: 1
+
+OUTPUT_DIR: log/plant_ai_resnet50
