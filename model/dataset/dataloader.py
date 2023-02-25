@@ -19,7 +19,6 @@ def make_dataloader(cfg):
     data_transforms = transforms.Compose([
         transforms.Resize(cfg.DATALOADER.IMAGE_SIZE),
         transforms.RandomCrop(size=cfg.DATALOADER.IMAGE_SIZE[0], padding=16),
-        transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5, hue=0.5),
         transforms.RandomRotation(degrees=30),
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
