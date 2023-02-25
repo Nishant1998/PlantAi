@@ -32,9 +32,10 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
     kf = KFold(n_splits=cfg.DATALOADER.K_FOLD)
     # Iterate over the folds
     for fold, (train_idx, val_idx) in enumerate(kf.split(dataset)):
+        if fold >= cfg.SOLVER.MIN_FOLD:
+            continue
         logger.info(f"Fold : {fold}")
-        if fold > cfg.SOLVER.MIN_FOLD:
-            break
+
         # Create the training and validation datasets
         train_dataset = torch.utils.data.Subset(dataset, train_idx)
         val_dataset = torch.utils.data.Subset(dataset, val_idx)
