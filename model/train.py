@@ -80,6 +80,8 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
                     logger.info(f"Train :: Epoch : {epoch+1}/{cfg.SOLVER.MAX_EPOCHS}, Iter : {i+1}/{len(train_loader)}, "
                                 f"loss : {loss_meter.avg:.4f}, lr : {optimizer.param_groups[0]['lr']}")
 
+
+
             record_train_acc.update(acc_meter.avg)
             record_train_loss.update(loss_meter.avg)
             acc_meter.reset()
@@ -116,6 +118,8 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
                 elif abs(val_acc_meter.avg - max_val_acc_meter.val) >= cfg.SOLVER.TOLERANCE:
                     early_stopping_counter.increment()
                 torch.save(model.state_dict(), cfg.OUTPUT_DIR + '/latest_model.pth')
+                if (epoch + 1) % 10 == 0:
+                    torch.save(model.state_dict(), cfg.OUTPUT_DIR + f'/model_epoch_{epoch}.pth')
 
                 record_val_acc.update(val_acc_meter.avg)
                 record_val_loss.update(val_loss_meter.avg)
@@ -142,22 +146,22 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
                       record_val_loss.values, path=f"{cfg.OUTPUT_DIR}/{fold}_")
 
 
-# def test_model(model, test_loader):
-#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-#     model = model.to(device)
-#     model.eval()
-#     logger.info("Testing model")
-#     acc_meter = AverageMeter()
-#     for i, (inputs, labels) in enumerate(test_loader):
-#         inputs = inputs.to(device)
-#         labels = labels.to(device)
-#
-#         outputs, obj_class = model(inputs)
-#
-#         _, preds = torch.max(outputs, 1)
-#         acc_meter.update((preds == labels).sum().item(), len(labels))
-#
-#     logger.info(f"Testing accuracy : {acc_meter.avg}")
+def test_model(model, test_loader):
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = model.to(device)
+    model.eval()
+    logger.info("Testing model")
+    acc_meter = AverageMeter()
+    for i, (inputs, labels) in enumerate(test_loader):
+        inputs = inputs.to(device)
+        labels = labels.to(device)
+
+        outputs, obj_class = model(inputs)
+
+        _, preds = torch.max(outputs, 1)
+        acc_meter.update((preds == labels).sum().item(), len(labels))
+
+    logger.info(f"Testing accuracy : {acc_meter.avg}")
 
 
 if __name__ == '__main__':
@@ -206,4 +210,4 @@ if __name__ == '__main__':
     scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10, verbose=True)
     train_model(cfg, model, criterion, optimizer, scheduler, train_dataset)
 
-    # test_model(model, test_loader)
+    test_model(model, test_loader)
