@@ -78,10 +78,10 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
 
                 if (i+1) % cfg.SOLVER.LOG_PERIOD == 0:
                     logger.info(f"Train :: Epoch : {epoch+1}/{cfg.SOLVER.MAX_EPOCHS}, Iter : {i+1}/{len(train_loader)}, "
-                                f"loss : {loss_meter.val:.4f}, lr : {optimizer.param_groups[0]['lr']}")
+                                f"loss : {loss_meter.avg:.4f}, lr : {optimizer.param_groups[0]['lr']}")
 
-            record_train_acc.update(acc_meter.val)
-            record_train_loss.update(loss_meter.val)
+            record_train_acc.update(acc_meter.avg)
+            record_train_loss.update(loss_meter.avg)
             acc_meter.reset()
             loss_meter.reset()
 
@@ -102,24 +102,24 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
                     loss = criterion(outputs, labels)
                     val_loss_meter.update(loss.item())
 
-                    if (i + 1) % (cfg.SOLVER.LOG_PERIOD / cfg.DATALOADER.K_FOLD) == 0:
+                    if ((i + 1) % (cfg.SOLVER.LOG_PERIOD / cfg.DATALOADER.K_FOLD) == 0) or (cfg.SOLVER.LOG_PERIOD == 1):
                         logger.info(f"Validation :: Epoch : {epoch+1}/{cfg.SOLVER.MAX_EPOCHS}, Iter : {i + 1}/{len(val_loader)}, "
-                                    f"loss : {val_loss_meter.val:.4f}, acc : {val_acc_meter.val:.4f}")
+                                    f"loss : {val_loss_meter.avg:.4f}, acc : {val_acc_meter.avg:.4f}")
 
                 # change lr based on val loss
-                scheduler.step(val_loss_meter.val)
+                scheduler.step(val_loss_meter.avg)
 
                 # save model
-                if val_acc_meter.val > max_val_acc_meter.val:
+                if val_acc_meter.avg > max_val_acc_meter.val:
                     best_model = model
                     early_stopping_counter.reset()
-                elif abs(val_acc_meter.val - max_val_acc_meter.val) >= cfg.SOLVER.TOLERANCE:
+                elif abs(val_acc_meter.avg - max_val_acc_meter.val) >= cfg.SOLVER.TOLERANCE:
                     early_stopping_counter.increment()
                 torch.save(model.state_dict(), cfg.OUTPUT_DIR + '/latest_model.pth')
 
-                record_val_acc.update(val_acc_meter.val)
-                record_val_loss.update(val_loss_meter.val)
-                max_val_acc_meter.update(val_acc_meter.val)
+                record_val_acc.update(val_acc_meter.avg)
+                record_val_loss.update(val_loss_meter.avg)
+                max_val_acc_meter.update(val_acc_meter.avg)
 
                 val_acc_meter.reset()
                 val_loss_meter.reset()
@@ -142,28 +142,28 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
                       record_val_loss.values, path=f"{cfg.OUTPUT_DIR}/{fold}_")
 
 
-def test_model(model, test_loader):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = model.to(device)
-    model.eval()
-    logger.info("Testing model")
-    acc_meter = AverageMeter()
-    for i, (inputs, labels) in enumerate(test_loader):
-        inputs = inputs.to(device)
-        labels = labels.to(device)
-
-        outputs, obj_class = model(inputs)
-
-        _, preds = torch.max(outputs, 1)
-        acc_meter.update((preds == labels).sum().item(), len(labels))
-
-    logger.info(f"Testing accuracy : {acc_meter.val}")
+# def test_model(model, test_loader):
+#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#     model = model.to(device)
+#     model.eval()
+#     logger.info("Testing model")
+#     acc_meter = AverageMeter()
+#     for i, (inputs, labels) in enumerate(test_loader):
+#         inputs = inputs.to(device)
+#         labels = labels.to(device)
+#
+#         outputs, obj_class = model(inputs)
+#
+#         _, preds = torch.max(outputs, 1)
+#         acc_meter.update((preds == labels).sum().item(), len(labels))
+#
+#     logger.info(f"Testing accuracy : {acc_meter.avg}")
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="ReID Baseline Training")
     parser.add_argument(
-        "--config_file", default="", help="path to config file", type=str
+        "--config_file", default="config/plantai_resnet_18.yaml", help="path to config file", type=str
     )
 
     parser.add_argument("opts", help="Modify config options using the command-line", default=None,
@@ -206,4 +206,4 @@ if __name__ == '__main__':
     scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10, verbose=True)
     train_model(cfg, model, criterion, optimizer, scheduler, train_dataset)
 
-    test_model(model, test_loader)
+    # test_model(model, test_loader)

@@ -21,11 +21,13 @@ def make_resnet_model(name):
 class ImageNet(nn.Module):
     def __init__(self):
         super().__init__()
-        self.imageNetModel = EfficientNet.from_name('efficientnet-b0')
+        self.imageNetModel = make_resnet_model("resnet18")
+        self.softmax = nn.Softmax(dim=1)
 
     def forward(self, x):
         y = self.imageNetModel(x)
-        index = torch.argmax(y)
+        y = self.softmax(y)
+        prob, index = torch.max(y, 1)
         return index
 
 
@@ -39,10 +41,12 @@ class PlantAi(nn.Module):
         elif cfg.MODEL.MODEL_TYPE == "resnet":
             self.base = make_resnet_model(cfg.MODEL.MODEL_NAME)
             self.base.fc = nn.Linear(self.base.fc.in_features, num_classes)
+        self.softmax = nn.Softmax(dim=1)
 
     def forward(self, x):
         obj_class = self.imageNetModel(x)
         x = self.base(x)
+        x = self.softmax(x)
         return x, obj_class
 
 
