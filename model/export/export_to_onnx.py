@@ -33,9 +33,9 @@ if __name__ == "__main__":
 
     cfg.freeze()
 
-    PATH = "F:\\nis\Codes\ANDROID PROJECTs\PlantAi\model\log\debug\\best_model.pth"
+    PATH = "F:\\nis\Codes\ANDROID PROJECTs\PlantAi\model\log\plant_ai_resnet18_96\\best_model.pth"
     # _, _, _, _, num_classes = make_dataloader(cfg)
-    num_classes = 6
+    num_classes = 39
     model = make_model(cfg, num_classes)
     model.load_state_dict(torch.load(PATH))
     # model = model.float()
