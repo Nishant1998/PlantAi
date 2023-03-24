@@ -56,3 +56,21 @@ class Counter(object):
 
     def increment(self):
         self.count += 1
+
+
+class CountDown(object):
+    """Keeps track of the number of times an event occurs"""
+
+    def __init__(self, n):
+        self.n = n
+        self.count = n
+
+    def reset(self):
+        self.count = self.n
+
+    def set(self, n):
+        self.n = n
+        self.count = self.n
+
+    def decrement(self):
+        self.count -= 1

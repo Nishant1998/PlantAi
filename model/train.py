@@ -201,6 +201,11 @@ if __name__ == '__main__':
 
     # Dataloader
     train_loader, test_loader, train_dataset, test_dataset, num_classes = make_dataloader(cfg)
+    logger.info(f"----- DataSet Info {cfg.DATASET.NAME} -----")
+    logger.info(f"1) Training set size - {len(train_dataset)}")
+    logger.info(f"2) Testing set size  - {len(test_dataset)}")
+    logger.info(f"1) Number of classes - {num_classes}")
+
     # Model
     model = make_model(cfg, num_classes)
 
