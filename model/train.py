@@ -28,6 +28,7 @@ def set_seed(seed):
 def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
+    criterion = criterion.to(device)
     best_model = model
     kf = KFold(n_splits=cfg.DATALOADER.K_FOLD)
     # Iterate over the folds
