@@ -63,4 +63,4 @@ def make_dataloader(cfg):
     # Apply the data transformation to the training set only
     train_dataset.dataset.transform = data_transforms
 
-    return train_loader, test_loader, train_dataset, test_dataset, num_classes, class_weights
+    return train_loader, test_loader, train_dataset, test_dataset, num_classes, torch.tensor(class_weights)
