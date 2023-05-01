@@ -208,7 +208,6 @@ if __name__ == '__main__':
 
     # Model
     model = make_model(cfg, num_classes)
-    print(f"num_classes : {num_classes}")
     # Define the loss function and optimizer
     criterion = nn.CrossEntropyLoss(weight=class_weights)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
