@@ -15,12 +15,5 @@
 .*
 data/
 log/
-*.pth
-*.png
-*.png
-*.pth
-*.txt
-*.pyc
-*.pyc
-model/model/__pycache__/make_model.cpython-39.pyc
+*.ptl
 *.pyc

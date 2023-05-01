@@ -200,7 +200,7 @@ if __name__ == '__main__':
     logger.info(cfg)
 
     # Dataloader
-    train_loader, test_loader, train_dataset, test_dataset, num_classes = make_dataloader(cfg)
+    train_loader, test_loader, train_dataset, test_dataset, num_classes, class_weights = make_dataloader(cfg)
     logger.info(f"----- DataSet Info {cfg.DATASET.NAME} -----")
     logger.info(f"1) Training set size - {len(train_dataset)}")
     logger.info(f"2) Testing set size  - {len(test_dataset)}")
@@ -210,7 +210,7 @@ if __name__ == '__main__':
     model = make_model(cfg, num_classes)
 
     # Define the loss function and optimizer
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(weight=class_weights)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     # scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10, verbose=True)
     scheduler = StepLR(optimizer, step_size=7, gamma=0.1)
