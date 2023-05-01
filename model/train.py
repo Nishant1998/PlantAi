@@ -165,7 +165,7 @@ def test_model(model, test_loader):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="ReID Baseline Training")
+    parser = argparse.ArgumentParser(description="PlantAi Training")
     parser.add_argument(
         "--config_file", default="config/plantai_resnet_18.yaml", help="path to config file", type=str
     )
@@ -188,7 +188,7 @@ if __name__ == '__main__':
     except:
         pass
 
-    logger = setup_logger("transreid", output_dir, if_train=True)
+    logger = setup_logger("PlantAi", output_dir, if_train=True)
     logger.info("Saving model in the path :{}".format(cfg.OUTPUT_DIR))
 
     if args.config_file != "":
