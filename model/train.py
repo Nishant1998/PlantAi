@@ -25,7 +25,7 @@ def set_seed(seed):
     torch.cuda.empty_cache()
 
 
-def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
+def train_model(cfg, model, criterion, optimizer, dataset):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
     criterion = criterion.to(device)
@@ -109,8 +109,6 @@ def train_model(cfg, model, criterion, optimizer, scheduler, dataset):
                         logger.info(f"Validation :: Epoch : {epoch+1}/{cfg.SOLVER.MAX_EPOCHS}, Iter : {i + 1}/{len(val_loader)}, "
                                     f"loss : {val_loss_meter.avg:.4f}, acc : {val_acc_meter.avg:.4f}")
 
-                # change lr based on val loss
-                scheduler.step(val_loss_meter.avg)
 
                 # save model
                 if val_acc_meter.avg > max_val_acc_meter.val:
@@ -212,8 +210,6 @@ if __name__ == '__main__':
     # Define the loss function and optimizer
     criterion = nn.CrossEntropyLoss(weight=class_weights)
     optimizer = optim.Adam(model.parameters(), lr=0.001)
-    # scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10, verbose=True)
-    scheduler = StepLR(optimizer, step_size=7, gamma=0.1)
-    train_model(cfg, model, criterion, optimizer, scheduler, train_dataset)
+    train_model(cfg, model, criterion, optimizer, train_dataset)
 
     test_model(model, test_loader)
