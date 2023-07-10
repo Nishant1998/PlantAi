@@ -6,6 +6,7 @@ _C = CN()
 _C.MODEL = CN()
 _C.MODEL.MODEL_TYPE = "efficientnet"
 _C.MODEL.MODEL_NAME = 'efficientnet-b0'
+_C.MODEL.WEIGHTS = "weights/best_model.pth"  # Path to trained weights
 
 # DATASET
 _C.DATASET = CN()

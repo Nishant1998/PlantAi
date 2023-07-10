@@ -1,6 +1,7 @@
 MODEL:
   MODEL_TYPE: resnet
   MODEL_NAME: resnet18
+  WEIGHTS: D:\Code\android\PlantAi\best_model.pth
 
 DATASET:
   NAME: dataset
