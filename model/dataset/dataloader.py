@@ -26,7 +26,6 @@ def make_dataloader(cfg):
         transforms.RandomHorizontalFlip(),
         transforms.RandomVerticalFlip(),
         transforms.ToTensor(),
-        # GaussianNoise(stddev=random.uniform(0, 0.1)),
         transforms.Normalize(cfg.DATASET.MEAN, cfg.DATASET.STD)
     ])
 
@@ -35,9 +34,6 @@ def make_dataloader(cfg):
     num_classes = len(plant_village_dataset.classes)
 
     # Split the dataset into train and test sets
-    # train_size = int(0.8 * len(plant_village_dataset))
-    # test_size = len(plant_village_dataset) - train_size
-    # train_dataset, test_dataset = torch.utils.data.random_split(plant_village_dataset, [train_size, test_size])
     data, labels = zip(*plant_village_dataset.imgs)
     # Split the data and labels using stratified sampling
     sss = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
