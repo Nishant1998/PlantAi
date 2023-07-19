@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/design_1"
-        android:text="@string/sele_lan_0"
+        android:text="@string/select_language"
         android:textSize="22sp"
         android:textAlignment="center"
         android:layout_margin="12dp"
@@ -90,7 +90,7 @@
             android:layout_weight="1"
             android:background="@drawable/button_fill3"
             android:onClick="cancelClick"
-            android:text="@string/cancel_0"
+            android:text="@string/cancel"
             android:textColor="@color/colorPrimary"
             android:layout_marginEnd="6dp"
             android:textSize="22sp" />
@@ -101,7 +101,7 @@
             android:layout_weight="1"
             android:background="@drawable/button_fill"
             android:onClick="saveClick"
-            android:text="@string/save_0"
+            android:text="@string/save"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
 

@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -26,37 +27,35 @@ public class ImageSlider extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         imageView = findViewById(R.id.userImageViewSlider);
         id = getIntent().getIntExtra("id",0);
-        try {
-            path = getIntent().getStringExtra("path");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        if(id == 999)
-        {
-            File imgFile = new File(Environment.getExternalStorageDirectory()
-                    + "/Android/PlantAi/test.jpg");
+        if (id == 999) {
+            String imagePath = getIntent().getStringExtra("image_path");
 
-            if (imgFile.exists()) {
-                Uri imageUri = Uri.fromFile(imgFile);
-                if (imageUri != null) {
+            if (imagePath != null) {
+                File imgFile = new File(imagePath);
+                if (imgFile.exists()) {
+                    Uri imageUri = Uri.fromFile(imgFile);
                     imageView.setVisibility(View.VISIBLE);
                     imageView.setImageURI(imageUri);
                     viewPager.setVisibility(View.GONE);
+                } else {
+                    Log.e("ImageSlider", "Image file does not exist at path: " + imagePath);
                 }
+            } else {
+                Log.e("ImageSlider", "No image path received in intent");
             }
         }
-        else if(id == 998)
-        {
-            File imgFile = new File(path);
+        else if (id == 998) {
+            String imagePath = getIntent().getStringExtra("image_path");
 
-            if (imgFile.exists()) {
-                Uri imageUri = Uri.fromFile(imgFile);
-                if (imageUri != null) {
-                    imageView.setVisibility(View.VISIBLE);
-                    imageView.setImageURI(imageUri);
-                    viewPager.setVisibility(View.GONE);
-                }
+            if (imagePath != null) {
+                Uri imageUri = Uri.parse(imagePath);
+                imageView.setVisibility(View.VISIBLE);
+                imageView.setImageURI(imageUri);
+                viewPager.setVisibility(View.GONE);
+            }
+            else {
+                Log.e("ImageSlider", "No image path received in intent");
             }
         }
         else

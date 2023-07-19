@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">PlantAi</string>
+
+    <!-- Language Selection -->
+    <string name="select_language">तुमची भाषा निवडा</string>
+    <string name="language">भाषा</string>
+    <string name="english">English</string>
+    <string name="hindi">हिंदी</string>
+    <string name="marathi">मराठी</string>
+
+    <!-- Navigation Buttons -->
+    <string name="next">पुढे</string>
+
+    <!-- Intro Screens -->
+    <string name="intro_heading">तुमच्या वनस्पतीला काय होत आहे ते जाणून घ्या</string>
+    <string name="intro_caption">वनस्पतीचा फोटो काढा, आम्ही संभाव्य उपाय सुचवू</string>
+
+    <!-- Action Buttons -->
+    <string name="save">जतन करा</string>
+    <string name="ok">ठीक</string>
+    <string name="cancel">रद्द करा</string>
+
+    <!-- Scan Message -->
+    <string name="not_scanned_yet">तुम्ही अजून कोणतीही वनस्पती स्कॅन केलेली नाही. आत्ता स्कॅन करा!</string>
+
+    <!-- Menu Items -->
+    <string name="menu_profile">प्रोफाइल</string>
+    <string name="menu_history">इतिहास</string>
+    <string name="menu_settings">सेटिंग्ज</string>
+    <string name="menu_about">माहिती</string>
+
+    <!-- Apple -->
+    <string name="apple_name">सफरचंद</string>
+    <string name="apple_info"><![CDATA[
+    सफरचंद, <i>Malus domestica</i>, हे रोजेसी कुळातील व्यापक लागवड केले जाणारे फळझाड आहे.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> स्कॅब, पावडरी मिल्ड्यू व फायर ब्लाइटची जास्त शक्यता; सुरुवातीस पानांवर डाग, वाळणे किंवा बुरशी दिसते.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> प्रतिरोधक जाती वापरा, संक्रमित फांद्या छाटून काढा, सेंद्रिय बुरशीनाशक फवारणी करा व हवा खेळती ठेवा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> चांगली निचरायुक्त दोमट माती, पूर्ण सूर्यप्रकाश, आणि योग्य निच-यासह मध्यम सिंचन.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> उशिरा उन्हाळा–लवकर शरद ऋतूत फळ घट्ट व पिकले की तोडा; उत्पन्न जातीनुसार बदलते.<br><br>
+    <b>सहपीक लागवड:</b> लसूण, कांदा, झेंडू यांसोबत वाढ चांगली; अक्रोडाजवळ लागवड टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजे, रस, साइडर व बेकरी पदार्थांसाठी वापर; जागतिक मागणी जास्त.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> नायट्रोजन, फॉस्फरस, पोटॅशियम आवश्यक; कमतरतेने पाने पिवळी पडतात व फळगुणवत्ता घटते.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> थंड हिवाळा व उबदार उन्हाळा असलेल्या समशीतोष्ण भागांसाठी योग्य; उत्तर अमेरिका, युरोप व आशिया.
+    ]]></string>
+
+    <!-- Blueberry -->
+    <string name="blueberry_name">ब्लूबेरी</string>
+    <string name="blueberry_info"><![CDATA[
+    ब्लूबेरी, <i>Vaccinium spp.</i>, ही खाद्य फळ देणारी बहुवर्षायू झुडूपे आहेत.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> ममी बेरी, बॉट्रायटिस ब्लाइट व मुळ कुजणे.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> सुकलेल्या फांद्या छाटून टाका, हवा खेळती ठेवा, सेंद्रिय बुरशीनाशक फवारणी करा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> आम्लीय माती (pH 4.5–5.5), पूर्ण सूर्यप्रकाश व सातत्यपूर्ण पाणी.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> फळे गडद निळी झाल्यावर तोडा; उत्पन्न जातीनुसार बदलते.<br><br>
+    <b>सहपीक लागवड:</b> अझेलिया, रोडोडेंड्रॉन व हीदर जवळ उत्तम वाढ.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजी, गोठवलेली, जॅम, रस व बेकिंगमध्ये वापर.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> नायट्रोजनसाठी अमोनियम सल्फेट उपयुक्त.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> थंड, ओलसर हवामान; उत्तर अमेरिका व युरोप सर्वोत्तम.
+    ]]></string>
+
+    <!-- Cherry -->
+    <string name="cherry_name">चेरी</string>
+    <string name="cherry_info"><![CDATA[
+    चेरी, <i>Prunus avium</i>, हे रोजेसी कुळातील फळ देणारे झाड आहे.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> ब्राउन रॉट, पानांवरील डाग व जीवाणूजन्य कॅंकरची शक्यता.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> नियमित छाटणी करा, गळलेली फळे काढून टाका, बुरशीनाशक फवारणी करा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> खोल, निचरायुक्त माती, पूर्ण सूर्य व मध्यम सिंचन.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> फळे पूर्ण रंगलेली व घट्ट असताना तोडा; उत्पन्न जातीनुसार बदलते.<br><br>
+    <b>सहपीक लागवड:</b> लसूण, कांदा, चाइव्ह्स सोबत चांगली; टोमॅटो जवळ टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजी खाण्यास, प्रिझर्व्हज, बेकिंग व रसासाठी वापर.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> फळधारणेसाठी नायट्रोजन व पोटॅशियम आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> थंड हिवाळा असलेल्या समशीतोष्ण भागांत चांगली वाढ.
+    ]]></string>
+
+    <!-- Corn -->
+    <string name="corn_name">मका</string>
+    <string name="corn_info"><![CDATA[
+    मका, <i>Zea mays</i>, हा व्यापकपणे पिकवला जाणारा धान्य पिक आहे.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> स्मट, कॉमन रस्ट व जीवाणूजन्य वाळवे (विल्ट).<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> पीक फेरपालट करा, बुरशीनाशके व कीड नियंत्रण तंत्र वापरा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> सुपीक, निचरायुक्त माती, पूर्ण सूर्य व नियमित सिंचन.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> दाणे दूधीय व पूर्ण विकसित झाल्यावर काढणी.<br><br>
+    <b>सहपीक लागवड:</b> बीन्स व स्क्वॅश (थ्री सिस्टर्स पद्धत) सोबत उत्तम वाढ.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> अन्न, पशुखाद्य व बायोफ्युएलमध्ये वापर.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> जोमदार वाढीसाठी उच्च नायट्रोजन आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> लांब उन्हाळा असलेल्या उबदार हवामानात चांगली वाढ.
+    ]]></string>
+
+    <!-- Grapes -->
+    <string name="grapes_name">द्राक्ष</string>
+    <string name="grapes_info"><![CDATA[
+    द्राक्ष, <i>Vitis vinifera</i>, ताजी फळे, वाइन व मनुके यांसाठी पिकवली जातात.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> पावडरी मिल्ड्यू, डाऊनी मिल्ड्यू व ब्लॅक रॉटची शक्यता.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> सल्फर-आधारित बुरशीनाशके, नियमित छाटणी व हवा खेळती ठेवा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> निचरायुक्त माती, पूर्ण सूर्यप्रकाश व ट्रेलिसचा आधार आवश्यक.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> बेरी पूर्ण पिकून गोड झाल्यावर तोडा.<br><br>
+    <b>सहपीक लागवड:</b> गुलाब व लसूण जवळ अनुकूल; कोबी कुलीजवळ टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजी, वाइन, मनुके व व्हिनेगरमध्ये वापर.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> फळ विकासासाठी पोटॅशियम व मॅग्नेशियम आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> भूमध्य सागरी हवामान सर्वोत्तम.
+    ]]></string>
+
+    <!-- Orange -->
+    <string name="orange_name">संत्रा</string>
+    <string name="orange_info"><![CDATA[
+    संत्रा, <i>Citrus sinensis</i>, हे सदाहरित झाड असून सिट्रस फळ देते.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> सिट्रस ग्रीनिंग, मुळ कुजणे व कॅंकर.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> रोगमुक्त रोपे वापरा, कॉपर-आधारित बुरशीनाशके लावा, निचरा सुधारावा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> वालुकामय दोमट माती, पूर्ण सूर्य व मध्यम सिंचन.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> फळ पूर्ण केशरी व घट्ट झाल्यावर तोडा; उत्पन्न बदलते.<br><br>
+    <b>सहपीक लागवड:</b> तुळस, पुदीना, झेंडू यांसह उत्तम.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजे, रस किंवा मुरंबा/मार्मलेडमध्ये वापर.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> नायट्रोजन, फॉस्फरस, पोटॅशियम आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> उपोष्णकटिबंधीय व उष्णकटिबंधीय हवामान योग्य.
+    ]]></string>
+
+    <!-- Peach -->
+    <string name="peach_name">पीच</string>
+    <string name="peach_info"><![CDATA[
+    पीच, <i>Prunus persica</i>, हे पानझडी झाड/झुडूप असून खाद्य फळांसाठी लागवड होते.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> लीफ कर्ल, ब्राउन रॉट व बॅक्टेरियल स्पॉटची शक्यता.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> कॉपर बुरशीनाशके लावा, संक्रमित फांद्या छाटून काढा, गळलेली पाने हटवा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> निचरायुक्त वालुकामय माती, पूर्ण सूर्य व नियमित सिंचन.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> फळ घट्ट पण थोडे मऊ झाल्यावर तोडा; उत्पन्न जातीनुसार बदलते.<br><br>
+    <b>सहपीक लागवड:</b> कडधान्ये व झेंडू सोबत चांगली; बटाट्याजवळ टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजी, जॅम, डेझर्ट व रस; जागतिक मागणी जास्त.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> जोमदार फलधारणेसाठी नायट्रोजन व पोटॅशियम आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> उबदार उन्हाळे असलेल्या समशीतोष्ण भागांत सर्वोत्तम.
+    ]]></string>
+
+    <!-- Pepper Bell -->
+    <string name="pepper_bell_name">भोपळी मिरची</string>
+    <string name="pepper_bell_info"><![CDATA[
+    भोपळी मिरची, <i>Capsicum annuum</i>, वार्षिक/बहुवर्षायू असून खाद्य फळांसाठी लागवड केली जाते.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> बॅक्टेरियल स्पॉट, पावडरी मिल्ड्यू व ब्लॉसम-एंड रॉट.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> रोगप्रतिकारक जाती, हवा खेळती ठेवा, सेंद्रिय कीटकनाशके वापरा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> निचरायुक्त दोमट माती, पूर्ण सूर्य, मध्यम सिंचन.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> फळ घट्ट व पूर्ण रंगले की तोडा; प्रति झाड चांगली उत्पादकता.<br><br>
+    <b>सहपीक लागवड:</b> गाजर, कांदा, तुळस सोबत चांगली; शेंगांजवळ टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजी, सॅलड, स्टर-फ्राय व स्टफ्ड पदार्थांत वापर.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> निरोगी फलधारणेसाठी फॉस्फरस व कॅल्शियम आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> उबदार हवामान व दीर्घ वाढीचा हंगाम योग्य.
+    ]]></string>
+
+    <!-- Potato -->
+    <string name="potato_name">बटाटा</string>
+    <string name="potato_info"><![CDATA[
+    बटाटा, <i>Solanum tuberosum</i>, हा खाद्य कंदांसाठी घेतला जाणारा शाकीय बहुवर्षायू आहे.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> लेट ब्लाइट, स्कॅब व फ्युजेरियम विल्ट.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> रोगमुक्त बीजकंद, पीक फेरपालट व बुरशीनाशके वापरा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> निचरायुक्त माती, थंड तापमान, सातत्यपूर्ण आर्द्रता.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> पालवी पिवळी पडल्यावर काढणी; उच्च उत्पादकता.<br><br>
+    <b>सहपीक लागवड:</b> शेंगा, मका व कोबीसोबत चांगली; टोमॅटोजवळ टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> स्वयंपाक, चिप्स, फ्राईज व औद्योगिक स्टार्च.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> कंद निर्मितीसाठी पोटॅशियम व फॉस्फरस आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> थंड हवामान व मध्यम पर्जन्यमान सर्वोत्तम.
+    ]]></string>
+
+    <!-- Raspberry -->
+    <string name="raspberry_name">रासबेरी</string>
+    <string name="raspberry_info"><![CDATA[
+    रासबेरी, <i>Rubus spp.</i>, सदाहरित मुळे व द्विवर्षायू काठ्यांसह फळ देणारे झुडूप आहे.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> मोज़ेक व्हायरस, केन ब्लाइट व रस्टची शक्यता.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> संक्रमित काठ्या छाटून टाका, हवा खेळती ठेवा, बुरशीनाशक फवारणी करा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> किंचित आम्लीय माती, पूर्ण सूर्य व सातत्यपूर्ण पाणी.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> बेरी पूर्ण रंगल्या व सहज तुटतील तेव्हा तोडा; प्रति झाड मध्यम उत्पन्न.<br><br>
+    <b>सहपीक लागवड:</b> लसूण व कांदा जवळ अनुकूल; बटाट्याजवळ टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजी, जॅम, डेझर्ट व रस.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> अधिक उत्पादनासाठी नायट्रोजन व सेंद्रिय मल्च आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> सौम्य उन्हाळ्यासह समशीतोष्ण भागांत उत्तम.
+    ]]></string>
+
+    <!-- Soybean -->
+    <string name="soybean_name">सोयाबीन</string>
+    <string name="soybean_info"><![CDATA[
+    सोयाबीन, <i>Glycine max</i>, प्रथिनसमृद्ध बियांकरिता घेतले जाणारे वार्षिक कडधान्य आहे।<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> सोयाबीन रस्ट, मुळ कुजणे व बॅक्टेरियल ब्लाइट.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> रोगप्रतिकारक जाती, योग्य पीक फेरपालट व पानांवर फवारणी.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> निचरायुक्त दोमट माती, उबदार तापमान व पूर्ण सूर्यप्रकाश.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> शेंगा तपकिरी व कोरड्या झाल्यावर काढणी; उच्च उत्पन्नाचे कडधान्य.<br><br>
+    <b>सहपीक लागवड:</b> मका व काकडीसोबत अनुकूल; कांदाजवळ टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> पशुखाद्य, टोफू, सोया दूध व बायोइंधन.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> नायट्रोजन स्थिरीकरण करणाऱ्या जीवाणूंनी माती सुपीक होते.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> उबदार समशीतोष्ण ते उष्णकटिबंधीय हवामानात चांगली वाढ.
+    ]]></string>
+
+    <!-- Strawberry -->
+    <string name="strawberry_name">स्ट्रॉबेरी</string>
+    <string name="strawberry_info"><![CDATA[
+    स्ट्रॉबेरी, <i>Fragaria × ananassa</i>, गोड फळांसाठी घेतले जाणारे लहान शाकीय बहुवर्षायू पीक आहे.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> ग्रे मोल्ड, पानांवरील डाग व पावडरी मिल्ड्यूची शक्यता.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> पेंढ्याने मल्च करा, संक्रमित पाने काढा, सेंद्रिय स्प्रे करा.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> वालुकामय दोमट माती, पूर्ण सूर्य व नियमित सिंचन.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> फळ पूर्ण लाल झाल्यावर तोडा; प्रति झाड मध्यम उत्पन्न.<br><br>
+    <b>सहपीक लागवड:</b> पालक व थाइमसोबत अनुकूल; कोबी कुलीजवळ टाळा.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजी, स्मूदी, डेझर्ट व प्रिझर्व्हज.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> फलधारणेसाठी उच्च पोटॅशियम आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> सौम्य समशीतोष्ण हवामान योग्य.
+    ]]></string>
+
+    <!-- Tomato -->
+    <string name="tomato_name">टोमॅटो</string>
+    <string name="tomato_info"><![CDATA[
+    टोमॅटो, <i>Lycopersicum esculentum</i>, हा वार्षिक वेल/झुडूप असून खाद्य फळ देतो.<br><br>
+    <b>सामान्य रोग &amp; लक्षणे:</b> ब्लाइट, विल्ट व टोमॅटो मोज़ेक व्हायरसची शक्यता.<br><br>
+    <b>प्रतिबंध &amp; उपचार:</b> पीक फेरपालट, खांब/आधार, बुरशीनाशक वापर.<br><br>
+    <b>आदर्श वाढीच्या अटी:</b> निचरायुक्त माती, पूर्ण सूर्य व मध्यम सिंचन.<br><br>
+    <b>काढणी &amp; उत्पन्न:</b> पूर्ण रंग आल्यावर व किंचित घट्ट असताना तोडा.<br><br>
+    <b>सहपीक लागवड:</b> तुळस, गाजर, कांदा सोबत चांगली वाढ.<br><br>
+    <b>बाजार मूल्य &amp; उपयोग:</b> ताजे, सॉस, केचप व सॅलडमध्ये वापर.<br><br>
+    <b>खत &amp; पोषक आवश्यकता:</b> सशक्त वाढीसाठी फॉस्फरस व कॅल्शियम आवश्यक.<br><br>
+    <b>हवामान &amp; प्रदेश अनुरूपता:</b> उबदार, सूर्यप्रकाशी हवामान योग्य.
+    ]]></string>
+
+    <!-- Read More Button -->
+    <string name="read_more">अधिक वाचा</string>
+    <string name="proc_image">प्रतिमा प्रक्रिया सुरू आहे, कृपया थांबा...</string>
+    <string name="top_pred">शीर्ष अंदाज</string>
+
+    <!-- Disease Names -->
+    <string name="dname_01">सफरचंद स्कॅब</string>
+    <string name="dname_02">सफरचंद ब्लॅक रॉट</string>
+    <string name="dname_03">सफरचंद सीडर रस्ट</string>
+    <string name="dname_04">सफरचंद निरोगी</string>
+    <string name="dname_05">पार्श्वभूमी / पाने नाहीत / अवैध इनपुट</string>
+    <string name="dname_06">ब्लूबेरी निरोगी</string>
+    <string name="dname_07">चेरी पावडरी मिल्ड्यू</string>
+    <string name="dname_08">चेरी निरोगी</string>
+    <string name="dname_09">मका सेर्कोस्पोरा पानडाग</string>
+    <string name="dname_10">मका कॉमन रस्ट</string>
+    <string name="dname_11">मका नॉर्दर्न लीफ ब्लाइट</string>
+    <string name="dname_12">मका निरोगी</string>
+    <string name="dname_13">द्राक्ष ब्लॅक रॉट</string>
+    <string name="dname_14">द्राक्ष एस्का (ब्लॅक मिजल्स)</string>
+    <string name="dname_15">ד्राक्ष पानझुलसा</string>
+    <string name="dname_16">द्राक्ष निरोगी</string>
+    <string name="dname_17">संत्रा हुआंगलोंगबिंग (सिट्रस ग्रीनिंग)</string>
+    <string name="dname_18">पीच बॅक्टेरियल स्पॉट</string>
+    <string name="dname_19">पीच निरोगी</string>
+    <string name="dname_20">भोपळी मिरची बॅक्टेरियल स्पॉट</string>
+    <string name="dname_21">भोपळी मिरची निरोगी</string>
+    <string name="dname_22">बटाटा अर्ली ब्लाइट</string>
+    <string name="dname_23">बटाटा लेट ब्लाइट</string>
+    <string name="dname_24">बटाटा निरोगी</string>
+    <string name="dname_25">रासबेरी निरोगी</string>
+    <string name="dname_26">सोयाबीन निरोगी</string>
+    <string name="dname_27">स्क्वॅश पावडरी मिल्ड्यू</string>
+    <string name="dname_28">स्ट्रॉबेरी लीफ स्कॉर्च</string>
+    <string name="dname_29">स्ट्रॉबेरी निरोगी</string>
+    <string name="dname_30">टोमॅटो बॅक्टेरियल स्पॉट</string>
+    <string name="dname_31">टोमॅटो अर्ली ब्लाइट</string>
+    <string name="dname_32">टोमॅटो लेट ब्लाइट</string>
+    <string name="dname_33">टोमॅटो लीफ मोल्ड</string>
+    <string name="dname_34">टोमॅटो सेप्टोरिया लीफ स्पॉट</string>
+    <string name="dname_35">टोमॅटो स्पायडर माइट्स</string>
+    <string name="dname_36">टोमॅटो टार्गेट स्पॉट</string>
+    <string name="dname_37">टोमॅटो यलो लीफ कर्ल व्हायरस</string>
+    <string name="dname_38">टोमॅटो मोज़ेक व्हायरस</string>
+    <string name="dname_39">टोमॅटो निरोगी</string>
+
+    <!--  About Disease Headings  -->
+    <string name="symptoms">लक्षणे</string>
+    <string name="prevention">प्रतिबंध</string>
+    <string name="cause">कारण</string>
+    <string name="bcontrol">जैव नियंत्रण</string>
+
+    <!-- Home Screen & Navigation -->
+    <string name="title_activity_home">मुख्यपृष्ठ</string>
+    <string name="navigation_drawer_open">नेव्हिगेशन ड्रॉवर उघडा</string>
+    <string name="navigation_drawer_close">नेव्हिगेशन ड्रॉवर बंद करा</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">नेव्हिगेशन हेडर</string>
+    <string name="action_settings">सेटिंग्ज</string>
+
+    <string name="report">अहवाल</string>
+    <string name="del_history">संपूर्ण इतिहास हटवा</string>
+    <string name="are_you_sure">तुम्हाला खात्री आहे का?</string>
+    <string name="all_his_willbe_del">संपूर्ण इतिहास हटवला जाईल!</string>
+    <string name="all_history_del">इतिहास हटवला गेला.</string>
+
+    <!-- Disease Details: Each disease has four parts -->
+    <!-- Disease 1: Apple Scab -->
+    <string name="symptoms_01">पानांवर व फळांवर गडद ऑलिव्ह-हिरवे/तपकिरी डाग दिसतात. पाने वाकडी-तिरकी होऊ शकतात. फळांवर खडबडीत, पपडीसारखे घाव होतात व बाजारमूल्य कमी होते.</string>
+    <string name="prevention_01">हवा खेळती ठेवण्यासाठी झाडांची छाटणी करा. जमिनीवरील संक्रमित पाने गोळा करून नष्ट करा. वाढीच्या मोसमाआधी (कॉपर/सल्फर-आधारित) बुरशीनाशक फवारणी करा.</string>
+    <string name="cause_01">थंड व ओलसर परिस्थितीत वाढणाऱ्या Venturia inaequalis या बुरशीमुळे.</string>
+    <string name="biological_01">प्रतिरोधक सफरचंद जाती वापरा. नीम तेल किंवा Bacillus subtilis ची फवारणी करा. कंपोस्ट घालून मृदास्वास्थ्य व वनस्पती प्रतिकारशक्ती वाढवा.</string>
+
+    <!-- Disease 2: Apple Black Rot -->
+    <string name="symptoms_02">सफरचंदावर बसलेले गडद, खोल गेलेले घाव वेळेनुसार काळे पडतात. पानांवर लहान तपकिरी डाग होतात व नंतर पिवळेपणा येतो. तीव्र अवस्थेत फांद्या कोमेजतात.</string>
+    <string name="prevention_02">संक्रमित फांद्या नियमित छाटून टाका. गळलेली फळे/पाने काढून नष्ट करा. कळी फुटण्याआधी बोर्डो मिश्रणसारखे सेंद्रिय बुरशीनाशक फवारणी करा.</string>
+    <string name="cause_02">पाऊस व वाऱ्याने पसर-णाऱ्या Botryosphaeria obtusa या बुरशीमुळे.</string>
+    <string name="biological_02">सल्फर-आधारित सेंद्रिय फवारण्या करा. कंपोस्ट-टी/उपयुक्त सूक्ष्मजंतू वापरा. रोगवाहक किडींवर उपजीविका करणाऱ्या लेडीबर्डसारख्या भक्षकांना प्रोत्साहन द्या.</string>
+
+    <!-- Disease 3: Apple Cedar Apple Rust -->
+    <string name="symptoms_03">सफरचंदाच्या पानांवर चमकदार नारिंगी/पिवळे ठिपके दिसतात. फळे विकृत होऊन अकाली गळू शकतात. झाडांची पानगळ लवकर होते व उत्पन्न घटते.</string>
+    <string name="prevention_03">बागेच्या 1 किमी परिसरातील जुनिपर झाडे (पर्यायी पोषक) काढून टाका. Enterprise/Liberty सारख्या प्रतिरोधक जाती वापरा. वसंताच्या सुरुवातीस कॉपर बुरशीनाशक फवारणी करा.</string>
+    <string name="cause_03">Gymnosporangium juniperi-virginianae मुळे; जीवनचक्र पूर्ण करण्यास जुनिपर व सफरचंद दोन्ही झाडे आवश्यक असतात.</string>
+    <string name="biological_03">Bacillus subtilis सारखी उपयुक्त जीवाणू फवारणी करा. कंपोस्ट/सेंद्रिय मल्चने मृदा तंदुरुस्त ठेवा. झाडाभोवती हवा खेळती ठेवा.</string>
+
+    <!-- Disease 4: Apple Healthy -->
+    <string name="symptoms_04">कुठलीही दिसणारी रोगलक्षणे नाहीत. पाने हिरवी, फळ विकास सामान्य व झाड उत्पादक.</string>
+    <string name="prevention_04">संतुलित खत (NPK) द्या. वायुविजनासाठी छाटणी करा. सुरुवातीच्या लक्षणांची नियमित पाहणी करा.</string>
+    <string name="cause_04">योग्य वाढीच्या अटींमुळे निरोगी स्थिती.</string>
+    <string name="biological_04">सेंद्रिय कंपोस्ट घाला व गांडुळांची संख्या वाढवा. मातीतील आर्द्रता राखण्यासाठी सेंद्रिय मल्च करा.</string>
+
+    <!-- Disease 5: Background / No leaves / Invalid Input -->
+    <string name="symptoms_05">पार्श्वभूमी / पाने नाहीत / अवैध इनपुट</string>
+    <string name="prevention_05"></string>
+    <string name="cause_05"></string>
+    <string name="biological_05"></string>
+
+    <!-- Disease 6: Blueberry Healthy -->
+    <string name="symptoms_06">तगडी, हिरवी पाने व भरघोस फळधारणा. बुरशी/जीवाणूजन्य रोगलक्षणे नाहीत.</string>
+    <string name="prevention_06">योग्य आम्लता राखण्यासाठी पाइनच्या सुयांनी मल्च करा. हवा खेळती राहावी म्हणून गर्दी टाळा. वरून पाणी देण्याऐवजी ठिबक सिंचन वापरा.</string>
+    <string name="cause_06">योग्य निगा, चांगला निचरा व रोगमुक्त वातावरण.</string>
+    <string name="biological_06">मुळांची ताकद वाढवण्यासाठी मायकोरायझल बुरशी वापरा. किडनियंत्रणासाठी लेडीबर्डसारख्या भक्षकांना प्रोत्साहन द्या.</string>
+
+    <!-- Disease 7: Cherry Powdery Mildew -->
+    <string name="symptoms_07">पानांवर, फुलांवर व कोवळ्या फळांवर पांढरे पावडरी ठिपके. पाने वाकडी-तिरपी होतात. फळांना भेगा पडू शकतात किंवा पृष्ठभाग खडबडीत होतो.</string>
+    <string name="prevention_07">पर्णसंभार कोरडा ठेवण्यासाठी वरून पाणी देऊ नका. हवा खेळती ठेवण्यासाठी छाटणी करा. नियमित सेंद्रिय सल्फर स्प्रे किंवा नीमतेल फवारणी करा.</string>
+    <string name="cause_07">आर्द्र हवेत पसरणाऱ्या Podosphaera clandestina या बुरशीमुळे.</string>
+    <string name="biological_07">बेकिंग सोडा व पाणी (प्रति लिटर 1 टीस्पून) द्रावणाची फवारणी करा. मातीमध्ये Trichoderma सारख्या उपयुक्त बुरशीला प्रोत्साहन द्या. दूध-पाणी फवारणीने बुरशी वाढ दबते.</string>
+
+    <!-- Disease 8: Cherry Healthy -->
+    <string name="symptoms_08">दृश्यमान रोगलक्षणे नाहीत. फुलोरा, फलधारणा व पानवाढ योग्य.</string>
+    <string name="prevention_08">पोटॅशियमसमृद्ध सेंद्रिय खते द्या. अतिगर्दी टाळण्यासाठी नियमित छाटणी करा.</string>
+    <string name="cause_08">चांगली देखभाल व निगेमुळे चेरीची झाडे निरोगी.</string>
+    <string name="biological_08">कंपोस्ट-टी फवारणीने प्रतिकारशक्ती वाढवा. उपयुक्त किड्यांना प्रोत्साहन देणारे विविध परिसंस्थेचे जतन करा.</string>
+
+    <!-- Disease 9: Corn Cercospora Leaf Spot -->
+    <string name="symptoms_09">पानांवर मधोमध करड्या केंद्रासह लहान तपकिरी डाग. पाने पिवळी पडून अकाली वाळतात. उत्पादनात लक्षणीय घट.</string>
+    <string name="prevention_09">रोगप्रतिकारक मका जाती वापरा. दरवर्षी पीक फेरपालट करून रोगचक्र तोडा. वरून सिंचन टाळा.</string>
+    <string name="cause_09">वारा व पावसाने पसरणाऱ्या Cercospora zeae-maydis बुरशीमुळे.</string>
+    <string name="biological_09">कंपोस्ट-टी फवारणीने नैसर्गिक संरक्षण वाढवा. Bacillus subtilis नैसर्गिक बुरशीनाशक म्हणून वापरा. मातीत योग्य नायट्रोजन संतुलन ठेवा.</string>
+
+    <!-- Disease 10: Corn Common Rust -->
+    <string name="symptoms_10">पानांच्या दोन्ही बाजूंवर तांबूस-तपकिरी फोड. पाने वाकडी व पिवळी होऊ शकतात. दमट हवेत झपाट्याने पसरतो.</string>
+    <string name="prevention_10">रस्ट-प्रतिरोधक हायब्रिड लावा. पीक फेरपालट करा. शेतातील संक्रमित अवशेष काढा.</string>
+    <string name="cause_10">ओलसर हवेत वाढणाऱ्या Puccinia sorghi मुळे.</string>
+    <string name="biological_10">Trichoderma-आधारित जैव बुरशीनाशके वापरा. रोगवाहक किडे कमी करण्यासाठी लेडीबर्डसारख्या भक्षकांना प्रोत्साहन द्या. कंपोस्ट-टी/सेंद्रिय पोटॅशियम खतांनी प्रतिकारशक्ती वाढवा.</string>
+
+    <!-- Disease 11: Corn Northern Leaf Blight -->
+    <string name="symptoms_11">पानांवर करड्या-हिरव्या जखमा बनून मोठ्या होतात व तपकिरी होतात. ओलसरतेत बीजाणू सहज पसरतात. तीव्र अवस्थेत उत्पादन घटते.</string>
+    <string name="prevention_11">रोगप्रतिकारक जाती लावा. गरज असल्यास बुरशीनाशके वापरा. शेत स्वच्छ ठेवा.</string>
+    <string name="cause_11">पाऊस व वाऱ्याने पसरणाऱ्या Exserohilum turcicum मुळे.</string>
+    <string name="biological_11">Trichoderma-आधारित जैव बुरशीनाशके लावा. नियमित कंपोस्ट-टी फवारणी करा. पाणी न साचण्यासाठी निचरा सुधारावा.</string>
+
+    <!-- Disease 12: Corn Healthy -->
+    <string name="symptoms_12">कुठलीही रोगलक्षणे नाहीत. पानांची जोमदार वाढ व जास्त दाणे.</string>
+    <string name="prevention_12">लवकर लक्षणे दिसतात का ते पाहणी करा. संतुलित खत व योग्य सिंचन पद्धती वापरा.</string>
+    <string name="cause_12">उत्तम वाढीच्या अटींमुळे मका निरोगी.</string>
+    <string name="biological_12">मातीमध्ये नायट्रोजन स्थिरीकरण करणारी जीवाणू वाढवा. कडधान्यांसह पीक फेरपालट करा.</string>
+
+    <!-- Disease 13: Grape Black Rot -->
+    <string name="symptoms_13">सुरुवातीला पानांवर लहान, गोल, लालसर-तपकिरी ठिपके; नंतर ते वाढून काळे होतात व मधोमध तांबूस भाग दिसतो. फळांवर खोल, गडद घाव तयार होतात; ती सुरकुतून ममीसारखी होतात.</string>
+    <string name="prevention_13">संक्रमित वेली व गळलेला कचरा काढा. कळी फुटण्याआधी वसंतात कॉपर-आधारित बुरशीनाशके फवारणी करा. ओळींमध्ये योग्य अंतर ठेवा.</string>
+    <string name="cause_13">उबदार, दमट हवेत वाढणाऱ्या Guignardia bidwellii मुळे; वारा व पावसाच्या शिंतोड्यांनी प्रसार.</string>
+    <string name="biological_13">Bacillus subtilis-आधारित जैव बुरशीनाशक फवारणी करा. मातीमध्ये Trichoderma सारख्या उपयुक्त बुरशी स्थापन करून रोगजंतूंशी स्पर्धा वाढवा.</string>
+
+    <!-- Disease 14: Grape Esca (Black Measles) -->
+    <string name="symptoms_14">पानांवर पिवळसर ठिपके व तपकिरी रेघा, अकाली पानगळ, बेरी सुरकुततात. लाकडामध्ये काळ्या रेघा दिसून वेल कमकुवत व कमीउत्पादक होते.</string>
+    <string name="prevention_14">संक्रमित वेली छाटताना साधने निर्जंतुक करा. संक्रमित लाकूड काढून जाळा. जास्त नायट्रोजन टाळा.</string>
+    <string name="cause_14">Phaeomoniella chlamydospora व Phaeoacremonium aleophilum या बुरशींच्या संकुलामुळे; छाटणीच्या जखमांतून प्रवेश.</string>
+    <string name="biological_14">छाटणीच्या जखमांवर Trichoderma-आधारित जैव नियंत्रक लावा. कंपोस्ट-टीने वेलांची प्रतिकारशक्ती वाढवा.</string>
+
+    <!-- Disease 15: Grape Leaf Blight -->
+    <string name="symptoms_15">पानांवर गडद तपकिरी, अनियमित डाग; ते वाढून कोरडे पडतात व पाने वाकडी होतात. प्रकाशसंश्लेषण घटल्याने वेल कमकुवत होतो व उत्पादन कमी होते.</string>
+    <string name="prevention_15">आर्द्रता कमी ठेवण्यासाठी योग्य छाटणी व वायुविजन सुनिश्चित करा. संक्रमणापूर्वी सल्फर-आधारित सेंद्रिय बुरशीनाशक फवारणी करा.</string>
+    <string name="cause_15">ओलसर हवेत वाढणाऱ्या Pseudocercospora vitis सारख्या बुरशी; वारा/पावसाने प्रसार.</string>
+    <string name="biological_15">नीमतेल/लसूण अर्काची प्रतिबंधक फवारणी करा. समुद्री शेवाळ-आधारित पानांवरील फवारणीने प्रतिकारशक्ती वाढवा.</string>
+
+    <!-- Disease 16: Grape Healthy -->
+    <string name="symptoms_16">पाने हिरवी व निरडाग; बेरी समसमान वाढतात, व्यवस्थित पिकतात व चांगला रंग येतो.</string>
+    <string name="prevention_16">हवा खेळती ठेवण्यासाठी नियमित छाटणी, लक्षणांची पाहणी व मातीची सुपीकता राखा.</string>
+    <string name="cause_16">योग्य पोषण, सिंचन व रोगनजर यामुळे संक्रमण टळते.</string>
+    <string name="biological_16">वेलाभोवती सेंद्रिय मल्च करा—मातीतील आर्द्रता व मुळांची वाढ सुधारते.</string>
+
+    <!-- Disease 17: Orange Haunglongbing (Citrus Greening) -->
+    <string name="symptoms_17">पानांवर चित्तरंजित पिवळे ठिपके व वाकडेपणा. फळे लहान, विस्कटलेली व कडू चवची. वेळेनुसार फांद्या कोरड्या पडतात.</string>
+    <string name="prevention_17">रोगमुक्त कलमे वापरा. रोग पसरवणाऱ्या सायलीड किडींवर कीटकनाशकांनी नियंत्रण ठेवा.</string>
+    <string name="cause_17">Asian citrus psyllid द्वारे पसरणाऱ्या Candidatus Liberibacter जीवाणूमुळे.</string>
+    <string name="biological_17">सायलीड नियंत्रणासाठी परजीवी भुंगे/ततैये सोडा. नीमतेलाचा सेंद्रिय प्रतिकारक म्हणून वापर करा.</string>
+
+    <!-- Disease 18: Peach Bacterial Spot -->
+    <string name="symptoms_18">पानांवर व फळांवर काळेकभिन्न, पाणचट डाग. रोग वाढल्यावर घाव खडबडीत/पपडीदार होतात.</string>
+    <string name="prevention_18">प्रतिरोधक पीच जाती लावा. हवा खेळती ठेवण्यासाठी छाटणी करा व कॉपर-आधारित बॅक्टेरिसाइड्स लावा.</string>
+    <string name="cause_18">पावसाच्या शिंतोड्यांमुळे व संक्रमित अवशेषांमधून पसरणाऱ्या Xanthomonas arboricola मुळे.</string>
+    <string name="biological_18">Bacillus subtilis-आधारित जैव प्रोडक्ट वापरा. कंपोस्ट-टीने झाडाचे आरोग्य सुधारा.</string>
+
+    <!-- Disease 19: Peach Healthy -->
+    <string name="symptoms_19">पाने तजेलदार हिरवी; फळांवर डाग/घाव नसून विकास सामान्य.</string>
+    <string name="prevention_19">योग्य छाटणी, संतुलित खत व सिंचन व्यवस्थापन ठेवा.</string>
+    <string name="cause_19">उत्तम वाढीच्या अटी व प्रभावी रोगनजर यामुळे निरोगी झाडे.</string>
+    <string name="biological_19">मायकोरायझल बुरशी वापरून पोषक शोषण सुधारवा.</string>
+
+    <!-- Disease 20: Pepper Bell Bacterial Spot -->
+    <string name="symptoms_20">पानांवर/फळांवर लहान, गडद, पाणचट ठिपके. पाने पिवळी पडून अकाली गळू शकतात.</string>
+    <string name="prevention_20">दरवर्षी पीक फेरपालट करा. वरून पाणी देणे टाळा. प्रमाणित रोगमुक्त बी वापरा.</string>
+    <string name="cause_20">Xanthomonas campestris मुळे; संक्रमित बी/मातीद्वारे प्रसार.</string>
+    <string name="biological_20">Bacillus subtilis-आधारित जैव बुरशीनाशके वापरा. नीमतेल फवारणीने प्रसार कमी होतो.</string>
+
+    <!-- Disease 21: Pepper Bell Healthy -->
+    <string name="symptoms_21">गडद हिरवी पाने व डागविरहित, घट्ट फळे.</string>
+    <string name="prevention_21">सेंद्रिय कंपोस्ट वापरा व संतुलित सिंचन ठेवा.</string>
+    <string name="cause_21">योग्य निगा व रोगनजरमुळे संसर्ग टळतो.</string>
+    <string name="biological_21">लेडीबर्डसारख्या उपयुक्त किड्यांना प्रोत्साहन द्या.</string>
+
+    <!-- Disease 22: Potato Early Blight -->
+    <string name="symptoms_22">जुन्या पानांवर केंद्रित वलयांसह तपकिरी गोल ठिपके. कंदनिर्मिती कमी होते.</string>
+    <string name="prevention_22">रोगमुक्त बीजकंद वापरा. बीजाणूंचा प्रसार रोखण्यासाठी मल्च करा. जास्त नायट्रोजन टाळा.</string>
+    <string name="cause_22">उबदार, ओलसर हवेत वाढणाऱ्या Alternaria solani मुळे.</string>
+    <string name="biological_22">Trichoderma-आधारित जैव बुरशीनाशके वापरा.</string>
+
+    <!-- Disease 23: Potato Late Blight -->
+    <string name="symptoms_23">पानां/खोडांवर गडद, पाणचट घाव; जास्त आर्द्रतेत खाली पांढरी बुरशी दिसते.</string>
+    <string name="prevention_23">प्रतिरोधक जाती लावा. आरंभीच्या चिन्हांवर कॉपर-आधारित बुरशीनाशके फवारणी करा.</string>
+    <string name="cause_23">ओलसर अवस्थेत बीजाणूंनी झपाट्याने पसर-णाऱ्या Phytophthora infestans मुळे.</string>
+    <string name="biological_23">नीमतेल/कंपोस्ट-टी स्प्रेने प्रतिकारशक्ती वाढवा.</string>
+
+    <!-- Disease 24: Potato Healthy -->
+    <string name="symptoms_24">पाने निरोगी, गडद हिरवी; कंद पूर्ण व समसमान विकसित.</string>
+    <string name="prevention_24">नियमित सिंचन, योग्य अंतर व रोगनजर ठेवा.</string>
+    <string name="cause_24">सु-व्यवस्थापित माती व किडनियंत्रणामुळे निरोगी वाढ.</string>
+    <string name="biological_24">लाभदायक निमॅटोडसारखे भक्षक प्रोत्साहित करा.</string>
+
+    <!-- Disease 25: Raspberry Healthy -->
+    <string name="symptoms_25">रासबेरी झुडपांवर तजेलदार हिरवी पाने व घट्ट, रसाळ फळे; कुठलीही डाग/रोगलक्षणे नाहीत.</string>
+    <string name="prevention_25">योग्य सिंचन, वरून पाणी देणे टाळा, झुडपांमध्ये हवा खेळती ठेवा.</string>
+    <string name="cause_25">निचरायुक्त माती व संतुलित पोषणासह उत्तम वाढीच्या अटींमुळे रोग टळतात.</string>
+    <string name="biological_25">सेंद्रिय कंपोस्ट व मायकोरायझल सूक्ष्मजीव वापरून आरोग्य सुधारा.</string>
+
+    <!-- Disease 26: Soybean Healthy -->
+    <string name="symptoms_26">सोयाबीन समसमान वाढतात, पाने गडद हिरवी; रोग/किड नुकसान दिसत नाही.</string>
+    <string name="prevention_26">पीक फेरपालट व संतुलित खतव्यवस्था ठेवा.</string>
+    <string name="cause_26">योग्य मृदा व्यवस्थापन, सिंचन व किडनियंत्रणामुळे रोगमुक्त पीक.</string>
+    <string name="biological_26">Rhizobium सारख्या नायट्रोजन स्थिरीकरण जीवाणूंनी सुपीकता वाढवा.</string>
+
+    <!-- Disease 27: Squash Powdery Mildew -->
+    <string name="symptoms_27">पानां, खोडां व फळांवर पांढरे पावडरी ठिपके. पाने वाकडी होऊन पिवळी पडतात व अकाली गळतात.</string>
+    <string name="prevention_27">प्रतिरोधक स्क्वॅश जाती लावा. हवा खेळती राहण्यासाठी योग्य अंतर ठेवा.</string>
+    <string name="cause_27">उबदार, कोरड्या हवेत पसरणाऱ्या Podosphaera xanthii मुळे.</string>
+    <string name="biological_27">सल्फर-आधारित स्प्रे/नीमतेल प्रतिबंधक फवारणी करा. दूध:पाणी (1:9) फवारणीने बुरशी कमी होते.</string>
+
+    <!-- Disease 28: Strawberry Leaf Scorch -->
+    <string name="symptoms_28">पानांवर पिवळ्या वर्तुळांसह लालसर-तपकिरी डाग; पाने कोमेजून उत्पादन घटते.</string>
+    <string name="prevention_28">वरून पाणी देऊ नका; बेड गळक्यापासून स्वच्छ ठेवा. बीजाणूंचा प्रसार रोखण्यासाठी मल्च करा.</string>
+    <string name="cause_28">उबदार, दमट हवेत वाढणाऱ्या Diplocarpon earlianum मुळे.</string>
+    <string name="biological_28">कंपोस्ट-टी किंवा Trichoderma-आधारित जैव बुरशीनाशके वापरा.</string>
+
+    <!-- Disease 29: Strawberry Healthy -->
+    <string name="symptoms_29">पाने हिरवी व घट्ट; फळे समसमान विकसित होऊन तजेलदार रंग दाखवतात; रोगलक्षणे नाहीत.</string>
+    <string name="prevention_29">पर्याप्त अंतर ठेवा, जास्त नायट्रोजन टाळा, किडनियंत्रण करा.</string>
+    <string name="cause_29">संतुलित पोषण, पुरेसा सूर्यप्रकाश व चांगला निचरा असल्यास स्ट्रॉबेरी निरोगी राहते.</string>
+    <string name="biological_29">समुद्री शेवाळ अर्काची पानांवरील फवारणी करा.</string>
+
+    <!-- Disease 30: Tomato Bacterial Spot -->
+    <string name="symptoms_30">पानां/फळांवर पिवळ्या आभासह लहान, गडद तपकिरी ठिपके. तीव्र अवस्थेत पाने अकाली गळतात.</string>
+    <string name="prevention_30">रोगमुक्त बी वापरा, पीक फेरपालट करा, वरून पाणी देणे टाळा.</string>
+    <string name="cause_30">दूषित माती व पाण्याच्या शिंतोड्यांनी पसरणाऱ्या Xanthomonas campestris मुळे.</string>
+    <string name="biological_30">कॉपर-आधारित बॅक्टेरिसाइड व Bacillus subtilis-आधारित जैव उत्पादने वापरा.</string>
+
+    <!-- Disease 31: Tomato Early Blight -->
+    <string name="symptoms_31">खालच्या पानांवर केंद्रित वलयांसह गडद तपकिरी ठिपके. पाने पिवळी पडून गळतात व उत्पादन कमी होते.</string>
+    <string name="prevention_31">प्रतिरोधक टोमॅटो जाती लावा. मातीतील बीजाणू उडू नयेत म्हणून मल्च करा.</string>
+    <string name="cause_31">उबदार, ओलसर हवेत वाढणाऱ्या Alternaria solani मुळे.</string>
+    <string name="biological_31">Trichoderma-आधारित जैव नियंत्रण वापरा. नीमतेल/कंपोस्ट-टीची नियमित फवारणी करा.</string>
+
+    <!-- Disease 32: Tomato Late Blight -->
+    <string name="symptoms_32">पानांवर पाणचट डाग तयार होऊन ते गडद तपकिरी होतात; आर्द्रतेत खाली पांढरी बुरशी दिसते.</string>
+    <string name="prevention_32">संक्रमित झाडे नष्ट करा, वरून पाणी देणे टाळा, संक्रमणाआधी कॉपर बुरशीनाशक लावा.</string>
+    <string name="cause_32">थंड, ओलसर हवेत झपाट्याने पसरणाऱ्या Phytophthora infestans मुळे.</string>
+    <string name="biological_32">Bacillus subtilis युक्त जैव बुरशीनाशके वापरा. मातीमध्ये Trichoderma मिसळा.</string>
+
+    <!-- Disease 33: Tomato Leaf Mold -->
+    <string name="symptoms_33">वरच्या पृष्ठभागावर पिवळे ठिपके; खाली मखमली ऑलिव्ह-हिरवा बुरशीचा थर.</string>
+    <string name="prevention_33">ग्रीनहाऊसमध्ये वायुविजन वाढवा, वरून पाणी देणे टाळा, प्रतिरोधक जाती वापरा.</string>
+    <string name="cause_33">उच्च आर्द्रता व कमी वायुविजनात वाढणाऱ्या Passalora fulva मुळे.</string>
+    <string name="biological_33">नीमतेल/बेकिंग सोडा स्प्रे करून बुरशी रोखा.</string>
+
+    <!-- Disease 34: Tomato Septoria Leaf Spot -->
+    <string name="symptoms_34">जुन्या पानांवर लहान, गोल, करडे-तपकिरी ठिपके ज्यांना गडद कडा असतात; शेवटी पानगळ होते.</string>
+    <string name="prevention_34">रोगमुक्त बी वापरा, संक्रमित पाने काढा, वरून सिंचन टाळा.</string>
+    <string name="cause_34">ओलसर हवेत पसरणाऱ्या Septoria lycopersici मुळे.</string>
+    <string name="biological_34">कंपोस्ट-टी/Trichoderma-आधारित जैव बुरशीनाशके फवारणी करा.</string>
+
+    <!-- Disease 35: Tomato Spider Mites -->
+    <string name="symptoms_35">पाने पिवळी पडतात व सूक्ष्म पांढ-या ठिपक्यांनी ठिपकेदार दिसतात. पानांच्या खालच्या बाजूस बारीक जाळे दिसते.</string>
+    <string name="prevention_35">जोरदार पाण्याच्या फवाऱ्याने माइट्स ढिला करा. लेडीबर्ड व भक्षक माइट्स सोडा.</string>
+    <string name="cause_35">गरम, कोरड्या हवेत वाढणाऱ्या Tetranychus urticae मुळे.</string>
+    <string name="biological_35">नीमतेल किंवा कीटनाशी साबण फवारून संख्या कमी करा.</string>
+
+    <!-- Disease 36: Tomato Target Spot -->
+    <string name="symptoms_36">पानां, खोडां व फळांवर केंद्रित वर्तुळे असलेले गडद गोल डाग.</string>
+    <string name="prevention_36">पीक फेरपालट करा, जास्त नायट्रोजन टाळा, हवा खेळती राहण्यासाठी छाटणी करा.</string>
+    <string name="cause_36">वारा व पाण्याने पसरणाऱ्या Corynespora cassiicola मुळे.</string>
+    <string name="biological_36">Trichoderma-आधारित जैव बुरशीनाशके वापरा.</string>
+
+    <!-- Disease 37: Tomato Yellow Leaf Curl Virus -->
+    <string name="symptoms_37">पाने वरच्या दिशेने वाकतात व पिवळी होतात; झाडाची वाढ खुंटते व उत्पादन घटते.</string>
+    <string name="prevention_37">व्हाईटफ्लायवर नियंत्रण ठेवा (व्हायरस वाहक). परावर्तित मल्च वापरून वाहक किडे दूर ठेवा.</string>
+    <string name="cause_37">व्हाईटф्लायद्वारे पसरणाऱ्या Tomato yellow leaf curl virus (TYLCV) मुळे.</string>
+    <string name="biological_37">लेसविंगसारखे भक्षक कीडे सोडा.</string>
+
+    <!-- Disease 38: Tomato Mosaic Virus -->
+    <string name="symptoms_38">पानांवर पिवळट-हिरवे मॉटल नमुने; पाने विकृत व सुरकुतलेली दिसतात.</string>
+    <string name="prevention_38">बागकामाची साधने निर्जंतुक करा, संक्रमित झाडे काढून टाका, प्रतिरोधक बी वापरा.</string>
+    <string name="cause_38">दूषित साधने व मानवी स्पर्शातून पसरणाऱ्या Tomato mosaic virus मुळे.</string>
+    <string name="biological_38">कंपोस्ट-टी फवारणीने वनस्पतींची प्रतिकारशक्ती वाढवा.</string>
+
+    <!-- Disease 39: Tomato Healthy -->
+    <string name="symptoms_39">तजेलदार हिरवी पाने, मजबूत खोडे व डाग/विकृती नसलेली निरोगी फळे.</string>
+    <string name="prevention_39">नियमित छाटणी व खत द्या, योग्य सिंचन वेळापत्रक ठेवा, लक्षणांची लवकर पाहणी करा.</string>
+    <string name="cause_39">संतुलित पोषक, किडनियंत्रण व चांगल्या वाढीच्या अटींमुळे उत्तम आरोग्य.</string>
+    <string name="biological_39">लाभदायक जीवाणू व बुरशींनी मातीचा सूक्ष्मजीवसमूह समृद्ध करा; मुळव्यवस्था मजबूत होते.</string>
+
+    <string name="prediction_failed">भाकीत अयशस्वी</string>
+    <string name="msg_no_leaf_found">पान आढळले नाही—साध्या पार्श्वभूमीवर एकच पान मध्यभागी ठेवा आणि पुन्हा प्रयत्न करा.</string>
+    <string name="msg_low_confidence">या फोटोवरून सांगणे कठीण आहे—पानाची अधिक स्पष्ट प्रतिमा काढा आणि पुन्हा प्रयत्न करा.</string>
+
+    <string name="about_page" translatable="false"><![CDATA[
+    <html>
+    <body style="text-align:justify;">
+        <h2>About PlantAI - Smart Plant Disease Detection</h2>
+        <p>
+            <b>PlantAI</b> is an AI-powered mobile application that helps users identify plant diseases using deep learning and computer vision.
+            Simply upload a leaf image, and the app provides real-time analysis with possible disease detection and management insights.
+        </p>
+
+        <h3>Connect with Me</h3>
+        <table>
+            <tr>
+                <td>🔗 <b>LinkedIn:</b></td>
+                <td><a href="https://www.linkedin.com/in/nishantvalvi/">linkedin.com/in/nishantvalvi/</a></td>
+            </tr>
+            <tr>
+                <td>📂 <b>GitHub:</b></td>
+                <td><a href="https://github.com/Nishant1998">github.com/Nishant1998</a></td>
+            </tr>
+        </table>
+
+        <p style="text-align:center;">
+            <i>Developed with ❤️ by Nishant</i>
+        </p>
+    </body>
+    </html>
+    ]]></string>
+
+</resources>

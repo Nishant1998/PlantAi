@@ -20,7 +20,7 @@
             android:id="@+id/setting_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sele_lan_0"
+            android:text="@string/select_language"
             android:textColor="@color/colorBlack"/>
 
         <TextView
@@ -47,7 +47,7 @@
             android:id="@+id/delreport_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/menu_history_0"
+            android:text="@string/menu_history"
             android:textColor="@color/colorBlack"/>
 
         <TextView
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="23dp"
-            android:text="@string/del_history_2"
+            android:text="@string/del_history"
             android:textColor="@color/colorBlue"
             android:textStyle="bold"/>
 

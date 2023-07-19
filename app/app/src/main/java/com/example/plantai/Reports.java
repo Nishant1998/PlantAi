@@ -1,5 +1,6 @@
 package com.example.plantai;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -26,13 +27,13 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
 
     private static final String SHARED = "Settings";
     private static final String SHARED_APP_LANG = "app_lang";
-    private int selected_lang;
+    private String selected_lang;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<ReportCard> reportCardList;
-    private String[] diseaseName = new String[38];
+    private String[] diseaseName = new String[39];
     ArrayList<Integer> id = new ArrayList<>();
 
     CardView cardView;
@@ -47,11 +48,22 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
 
         __init__();
         selected_lang = load_setting();
-        setLang(selected_lang);
+        setLang();
 
         //genrate data
         viewAll();
         reportRecyclerViewConfig();
+
+        // Register a callback for back button presses
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Your custom back action: navigate to a specific activity
+                Intent intent = new Intent(Reports.this, Home.class);
+                startActivity(intent);
+                finish();  // Optionally finish the current activity
+            }
+        });
     }
 
     private void genrateReportData(String diseaseName, String date) {
@@ -100,147 +112,51 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
         empText = findViewById(R.id.emptyReportText);
     }
 
-    private void setLang(int selected_lang) {
-        switch (selected_lang) {
-            case 0: {
-                {
-                    diseaseName[0] = getString(R.string.dname_01_0);
-                    diseaseName[1] = getString(R.string.dname_02_0);
-                    diseaseName[2] = getString(R.string.dname_03_0);
-                    diseaseName[3] = getString(R.string.dname_04_0);
-                    diseaseName[4] = getString(R.string.dname_05_0);
-                    diseaseName[5] = getString(R.string.dname_06_0);
-                    diseaseName[6] = getString(R.string.dname_07_0);
-                    diseaseName[7] = getString(R.string.dname_08_0);
-                    diseaseName[8] = getString(R.string.dname_09_0);
-                    diseaseName[9] = getString(R.string.dname_10_0);
-                    diseaseName[10] = getString(R.string.dname_11_0);
-                    diseaseName[11] = getString(R.string.dname_12_0);
-                    diseaseName[12] = getString(R.string.dname_13_0);
-                    diseaseName[13] = getString(R.string.dname_14_0);
-                    diseaseName[14] = getString(R.string.dname_15_0);
-                    diseaseName[15] = getString(R.string.dname_16_0);
-                    diseaseName[16] = getString(R.string.dname_17_0);
-                    diseaseName[17] = getString(R.string.dname_18_0);
-                    diseaseName[18] = getString(R.string.dname_19_0);
-                    diseaseName[19] = getString(R.string.dname_20_0);
-                    diseaseName[20] = getString(R.string.dname_21_0);
-                    diseaseName[21] = getString(R.string.dname_22_0);
-                    diseaseName[22] = getString(R.string.dname_23_0);
-                    diseaseName[23] = getString(R.string.dname_24_0);
-                    diseaseName[24] = getString(R.string.dname_25_0);
-                    diseaseName[25] = getString(R.string.dname_26_0);
-                    diseaseName[26] = getString(R.string.dname_27_0);
-                    diseaseName[27] = getString(R.string.dname_28_0);
-                    diseaseName[28] = getString(R.string.dname_29_0);
-                    diseaseName[29] = getString(R.string.dname_30_0);
-                    diseaseName[30] = getString(R.string.dname_31_0);
-                    diseaseName[31] = getString(R.string.dname_32_0);
-                    diseaseName[32] = getString(R.string.dname_33_0);
-                    diseaseName[33] = getString(R.string.dname_34_0);
-                    diseaseName[34] = getString(R.string.dname_35_0);
-                    diseaseName[35] = getString(R.string.dname_36_0);
-                    diseaseName[36] = getString(R.string.dname_37_0);
-                    diseaseName[37] = getString(R.string.dname_38_0);
-                    empText.setText(getString(R.string.not_scan_yet_0));
-                }
-            }
-            break;
-            case 1: {
-                {
-                    diseaseName[0] = getString(R.string.dname_01_1);
-                    diseaseName[1] = getString(R.string.dname_02_1);
-                    diseaseName[2] = getString(R.string.dname_03_1);
-                    diseaseName[3] = getString(R.string.dname_04_1);
-                    diseaseName[4] = getString(R.string.dname_05_1);
-                    diseaseName[5] = getString(R.string.dname_06_1);
-                    diseaseName[6] = getString(R.string.dname_07_1);
-                    diseaseName[7] = getString(R.string.dname_08_1);
-                    diseaseName[8] = getString(R.string.dname_09_1);
-                    diseaseName[9] = getString(R.string.dname_10_1);
-                    diseaseName[10] = getString(R.string.dname_11_1);
-                    diseaseName[11] = getString(R.string.dname_12_1);
-                    diseaseName[12] = getString(R.string.dname_13_1);
-                    diseaseName[13] = getString(R.string.dname_14_1);
-                    diseaseName[14] = getString(R.string.dname_15_1);
-                    diseaseName[15] = getString(R.string.dname_16_1);
-                    diseaseName[16] = getString(R.string.dname_17_1);
-                    diseaseName[17] = getString(R.string.dname_18_1);
-                    diseaseName[18] = getString(R.string.dname_19_1);
-                    diseaseName[19] = getString(R.string.dname_20_1);
-                    diseaseName[20] = getString(R.string.dname_21_1);
-                    diseaseName[21] = getString(R.string.dname_22_1);
-                    diseaseName[22] = getString(R.string.dname_23_1);
-                    diseaseName[23] = getString(R.string.dname_24_1);
-                    diseaseName[24] = getString(R.string.dname_25_1);
-                    diseaseName[25] = getString(R.string.dname_26_1);
-                    diseaseName[26] = getString(R.string.dname_27_1);
-                    diseaseName[27] = getString(R.string.dname_28_1);
-                    diseaseName[28] = getString(R.string.dname_29_1);
-                    diseaseName[29] = getString(R.string.dname_30_1);
-                    diseaseName[30] = getString(R.string.dname_31_1);
-                    diseaseName[31] = getString(R.string.dname_32_1);
-                    diseaseName[32] = getString(R.string.dname_33_1);
-                    diseaseName[33] = getString(R.string.dname_34_1);
-                    diseaseName[34] = getString(R.string.dname_35_1);
-                    diseaseName[35] = getString(R.string.dname_36_1);
-                    diseaseName[36] = getString(R.string.dname_37_1);
-                    diseaseName[37] = getString(R.string.dname_38_1);
-                    empText.setText(getString(R.string.not_scan_yet_1));
-                }
-            }
-            break;
-            case 2: {
-                {
-                    diseaseName[0] = getString(R.string.dname_01_2);
-                    diseaseName[1] = getString(R.string.dname_02_2);
-                    diseaseName[2] = getString(R.string.dname_03_2);
-                    diseaseName[3] = getString(R.string.dname_04_2);
-                    diseaseName[4] = getString(R.string.dname_05_2);
-                    diseaseName[5] = getString(R.string.dname_06_2);
-                    diseaseName[6] = getString(R.string.dname_07_2);
-                    diseaseName[7] = getString(R.string.dname_08_2);
-                    diseaseName[8] = getString(R.string.dname_09_2);
-                    diseaseName[9] = getString(R.string.dname_10_2);
-                    diseaseName[10] = getString(R.string.dname_11_2);
-                    diseaseName[11] = getString(R.string.dname_12_2);
-                    diseaseName[12] = getString(R.string.dname_13_2);
-                    diseaseName[13] = getString(R.string.dname_14_2);
-                    diseaseName[14] = getString(R.string.dname_15_2);
-                    diseaseName[15] = getString(R.string.dname_16_2);
-                    diseaseName[16] = getString(R.string.dname_17_2);
-                    diseaseName[17] = getString(R.string.dname_18_2);
-                    diseaseName[18] = getString(R.string.dname_19_2);
-                    diseaseName[19] = getString(R.string.dname_20_2);
-                    diseaseName[20] = getString(R.string.dname_21_2);
-                    diseaseName[21] = getString(R.string.dname_22_2);
-                    diseaseName[22] = getString(R.string.dname_23_2);
-                    diseaseName[23] = getString(R.string.dname_24_2);
-                    diseaseName[24] = getString(R.string.dname_25_2);
-                    diseaseName[25] = getString(R.string.dname_26_2);
-                    diseaseName[26] = getString(R.string.dname_27_2);
-                    diseaseName[27] = getString(R.string.dname_28_2);
-                    diseaseName[28] = getString(R.string.dname_29_2);
-                    diseaseName[29] = getString(R.string.dname_30_2);
-                    diseaseName[30] = getString(R.string.dname_31_2);
-                    diseaseName[31] = getString(R.string.dname_32_2);
-                    diseaseName[32] = getString(R.string.dname_33_2);
-                    diseaseName[33] = getString(R.string.dname_34_2);
-                    diseaseName[34] = getString(R.string.dname_35_2);
-                    diseaseName[35] = getString(R.string.dname_36_2);
-                    diseaseName[36] = getString(R.string.dname_37_2);
-                    diseaseName[37] = getString(R.string.dname_38_2);
-                    empText.setText(getString(R.string.not_scan_yet_2));
-                }
-            }
-            break;
-        }
+    private void setLang() {
+        diseaseName[0] = getString(R.string.dname_01);
+        diseaseName[1] = getString(R.string.dname_02);
+        diseaseName[2] = getString(R.string.dname_03);
+        diseaseName[3] = getString(R.string.dname_04);
+        diseaseName[4] = getString(R.string.dname_05);
+        diseaseName[5] = getString(R.string.dname_06);
+        diseaseName[6] = getString(R.string.dname_07);
+        diseaseName[7] = getString(R.string.dname_08);
+        diseaseName[8] = getString(R.string.dname_09);
+        diseaseName[9] = getString(R.string.dname_10);
+        diseaseName[10] = getString(R.string.dname_11);
+        diseaseName[11] = getString(R.string.dname_12);
+        diseaseName[12] = getString(R.string.dname_13);
+        diseaseName[13] = getString(R.string.dname_14);
+        diseaseName[14] = getString(R.string.dname_15);
+        diseaseName[15] = getString(R.string.dname_16);
+        diseaseName[16] = getString(R.string.dname_17);
+        diseaseName[17] = getString(R.string.dname_18);
+        diseaseName[18] = getString(R.string.dname_19);
+        diseaseName[19] = getString(R.string.dname_20);
+        diseaseName[20] = getString(R.string.dname_21);
+        diseaseName[21] = getString(R.string.dname_22);
+        diseaseName[22] = getString(R.string.dname_23);
+        diseaseName[23] = getString(R.string.dname_24);
+        diseaseName[24] = getString(R.string.dname_25);
+        diseaseName[25] = getString(R.string.dname_26);
+        diseaseName[26] = getString(R.string.dname_27);
+        diseaseName[27] = getString(R.string.dname_28);
+        diseaseName[28] = getString(R.string.dname_29);
+        diseaseName[29] = getString(R.string.dname_30);
+        diseaseName[30] = getString(R.string.dname_31);
+        diseaseName[31] = getString(R.string.dname_32);
+        diseaseName[32] = getString(R.string.dname_33);
+        diseaseName[33] = getString(R.string.dname_34);
+        diseaseName[34] = getString(R.string.dname_35);
+        diseaseName[35] = getString(R.string.dname_36);
+        diseaseName[36] = getString(R.string.dname_37);
+        diseaseName[37] = getString(R.string.dname_38);
+        diseaseName[38] = getString(R.string.dname_39);
     }
 
-    int load_setting() {
+    String load_setting() {
         SharedPreferences mySharedPreference = getSharedPreferences(SHARED, MODE_PRIVATE);
-        int i = mySharedPreference.getInt(SHARED_APP_LANG, 0);
-        return i;
+        return  mySharedPreference.getString(SHARED_APP_LANG, "en");
     }
 
 
@@ -257,21 +173,16 @@ public class Reports extends AppCompatActivity implements ReportCardsAdapter.Rep
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent = null;
-        switch (item.getItemId()) {
-            case R.id.op_all_diseases:
-                intent = new Intent(this, AllDiseases.class);
-                break;
-            case R.id.op_reports:
-                intent = new Intent(this, Reports.class);
-                break;
-            case R.id.op_setting:
-                intent = new Intent(this, Settings.class);
-                break;
-            case R.id.op_about:
-                intent = new Intent(this, About.class);
-                break;
-
+        if (item.getItemId() == R.id.op_all_diseases) {
+            intent = new Intent(this, AllDiseases.class);
+        } else if (item.getItemId() == R.id.op_reports) {
+            intent = new Intent(this, Reports.class);
+        } else if (item.getItemId() == R.id.op_setting) {
+            intent = new Intent(this, Settings.class);
+        } else if (item.getItemId() == R.id.op_about) {
+            intent = new Intent(this, About.class);
         }
+
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }

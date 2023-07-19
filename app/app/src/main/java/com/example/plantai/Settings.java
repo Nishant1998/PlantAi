@@ -1,5 +1,6 @@
 package com.example.plantai;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +23,7 @@ public class Settings extends AppCompatActivity {
 
     private static final String SHARED = "Settings";
     private static final String SHARED_APP_LANG = "app_lang";
-    int selected_lang;
+    String selected_lang;
 
     TextView textView0,textView1;
     TextView delReport0,delReport1;
@@ -45,7 +46,18 @@ public class Settings extends AppCompatActivity {
 
         //get setting and change language
         selected_lang = load_setting();
-        setLang(selected_lang);
+        setLang();
+
+        // Register a callback for back button presses
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Your custom back action: navigate to a specific activity
+                Intent intent = new Intent(Settings.this, Home.class);
+                startActivity(intent);
+                finish();  // Optionally finish the current activity
+            }
+        });
 
     }
 
@@ -67,25 +79,20 @@ public class Settings extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent=null;
-        switch (item.getItemId())
-        {
-            case R.id.op_all_diseases:
-                intent = new Intent(this, AllDiseases.class);
-                startActivity(intent);
-                break;
-            case R.id.op_reports:
-                intent = new Intent(this,Reports.class);
-                startActivity(intent);
-                break;
-            case R.id.op_setting:
-//                intent = new Intent(this,this.class);
-                break;
-            case R.id.op_about:
-                intent = new Intent(this,About.class);
-                startActivity(intent);
-                break;
-
+        if (item.getItemId() == R.id.op_all_diseases) {
+            intent = new Intent(this, AllDiseases.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.op_reports) {
+            intent = new Intent(this, Reports.class);
+            startActivity(intent);
+        } else if (item.getItemId() == R.id.op_setting) {
+            // Intent commented out, keeping empty action for now
+            // intent = new Intent(this, this.class);
+        } else if (item.getItemId() == R.id.op_about) {
+            intent = new Intent(this, About.class);
+            startActivity(intent);
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -95,55 +102,24 @@ public class Settings extends AppCompatActivity {
     }
 
     //TODO Load Setting
-    int load_setting()
+    String load_setting()
     {
         SharedPreferences mySharedPreference = getSharedPreferences(SHARED,MODE_PRIVATE);
-        int i = mySharedPreference.getInt(SHARED_APP_LANG,0);
-        return i;
+        return mySharedPreference.getString(SHARED_APP_LANG,"en");
     }
 
     //TODO Change lang
-    void setLang(int i)
+    void setLang()
     {
-        switch (i)
-        {
-            case 0:
-                System.out.println("CASE 0 ***");
-                textView0.setText(getString(R.string.sele_lan_0));
-                textView1.setText(getString(R.string.english));
-                delReport0.setText(getString(R.string.menu_history_0));
-                delReport1.setText(getString(R.string.del_history_0));
-                builder.setTitle(getString(R.string.are_you_sure_0));
-                builder.setMessage(getString(R.string.all_his_willbe_del_0));
-                ok = getString(R.string.ok_0);
-                cancle = getString(R.string.cancel_0);
-                deleted = getString(R.string.all_history_del_0);
-                break;
-            case 1:
-                System.out.println("CASE 1 ***");
-                textView0.setText(getString(R.string.sele_lan_1));
-                textView1.setText(getString(R.string.hindi));
-                delReport0.setText(getString(R.string.menu_history_1));
-                delReport1.setText(getString(R.string.del_history_1));
-                builder.setTitle(getString(R.string.are_you_sure_1));
-                builder.setMessage(getString(R.string.all_his_willbe_del_1));
-                ok = getString(R.string.ok_1);
-                cancle = getString(R.string.cancel_1);
-                deleted = getString(R.string.all_history_del_1);
-                break;
-            case 2:
-                System.out.println("CASE 2 ***");
-                textView0.setText(getString(R.string.sele_lan_2));
-                textView1.setText(getString(R.string.marathi));
-                delReport0.setText(getString(R.string.menu_history_2));
-                delReport1.setText(getString(R.string.del_history_2));
-                builder.setTitle(getString(R.string.are_you_sure_2));
-                builder.setMessage(getString(R.string.all_his_willbe_del_2));
-                ok = getString(R.string.ok_2);
-                cancle = getString(R.string.cancel_2);
-                deleted = getString(R.string.all_history_del_2);
-                break;
-        }
+        textView0.setText(getString(R.string.select_language));
+        textView1.setText(getString(R.string.language));
+        delReport0.setText(getString(R.string.menu_history));
+        delReport1.setText(getString(R.string.del_history));
+        builder.setTitle(getString(R.string.are_you_sure));
+        builder.setMessage(getString(R.string.all_his_willbe_del));
+        ok = getString(R.string.ok);
+        cancle = getString(R.string.cancel);
+        deleted = getString(R.string.all_history_del);
     }
 
     public void clickDelReportSetting(View view) {
@@ -169,4 +145,6 @@ public class Settings extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
+
 }

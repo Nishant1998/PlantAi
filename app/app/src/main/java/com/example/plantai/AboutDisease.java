@@ -15,20 +15,28 @@ public class AboutDisease extends AppCompatActivity implements View.OnClickListe
 
     private static final String SHARED = "Settings";
     private static final String SHARED_APP_LANG = "app_lang";
-    int selected_lang;
+    String selected_lang;
     int did;
 
-    int[] stringDnames_0 = {R.string.dname_01_0,R.string.dname_02_0,R.string.dname_03_0, R.string.dname_04_0,R.string.dname_05_0,R.string.dname_06_0,R.string.dname_07_0,R.string.dname_08_0,R.string.dname_09_0,R.string.dname_10_0,R.string.dname_11_0,R.string.dname_12_0,R.string.dname_13_0,R.string.dname_14_0,R.string.dname_15_0,R.string.dname_16_0,R.string.dname_17_0,R.string.dname_18_0,R.string.dname_19_0,R.string.dname_20_0,R.string.dname_21_0,R.string.dname_22_0,R.string.dname_23_0,R.string.dname_24_0,R.string.dname_25_0,R.string.dname_26_0,R.string.dname_27_0,R.string.dname_28_0,R.string.dname_29_0,R.string.dname_30_0,R.string.dname_31_0,R.string.dname_32_0,R.string.dname_33_0,R.string.dname_34_0,R.string.dname_35_0,R.string.dname_36_0,R.string.dname_37_0,R.string.dname_38_0};
-    int[] stringDnames_1 = {R.string.dname_01_1,R.string.dname_02_1,R.string.dname_03_1, R.string.dname_04_1,R.string.dname_05_1,R.string.dname_06_1,R.string.dname_07_1,R.string.dname_08_1,R.string.dname_09_1,R.string.dname_10_1,R.string.dname_11_1,R.string.dname_12_1,R.string.dname_13_1,R.string.dname_14_1,R.string.dname_15_1,R.string.dname_16_1,R.string.dname_17_1,R.string.dname_18_1,R.string.dname_19_1,R.string.dname_20_1,R.string.dname_21_1,R.string.dname_22_1,R.string.dname_23_1,R.string.dname_24_1,R.string.dname_25_1,R.string.dname_26_1,R.string.dname_27_1,R.string.dname_28_1,R.string.dname_29_1,R.string.dname_30_1,R.string.dname_31_1,R.string.dname_32_1,R.string.dname_33_1,R.string.dname_34_1,R.string.dname_35_1,R.string.dname_36_1,R.string.dname_37_1,R.string.dname_38_1};
-    int[] stringDnames_2 = {R.string.dname_01_2,R.string.dname_02_2,R.string.dname_03_2, R.string.dname_04_2,R.string.dname_05_2,R.string.dname_06_2,R.string.dname_07_2,R.string.dname_08_2,R.string.dname_09_2,R.string.dname_10_2,R.string.dname_11_2,R.string.dname_12_2,R.string.dname_13_2,R.string.dname_14_2,R.string.dname_15_2,R.string.dname_16_2,R.string.dname_17_2,R.string.dname_18_2,R.string.dname_19_2,R.string.dname_20_2,R.string.dname_21_2,R.string.dname_22_2,R.string.dname_23_2,R.string.dname_24_2,R.string.dname_25_2,R.string.dname_26_2,R.string.dname_27_2,R.string.dname_28_2,R.string.dname_29_2,R.string.dname_30_2,R.string.dname_31_2,R.string.dname_32_2,R.string.dname_33_2,R.string.dname_34_2,R.string.dname_35_2,R.string.dname_36_2,R.string.dname_37_2,R.string.dname_38_2};
+    int[] stringDnames = {R.string.dname_01,R.string.dname_02,R.string.dname_03, R.string.dname_04,R.string.dname_05,R.string.dname_06,R.string.dname_07,R.string.dname_08,R.string.dname_09,R.string.dname_10,R.string.dname_11,R.string.dname_12,R.string.dname_13,R.string.dname_14,R.string.dname_15,R.string.dname_16,R.string.dname_17,R.string.dname_18,R.string.dname_19,R.string.dname_20,R.string.dname_21,R.string.dname_22,R.string.dname_23,R.string.dname_24,R.string.dname_25,R.string.dname_26,R.string.dname_27,R.string.dname_28,R.string.dname_29,R.string.dname_30,R.string.dname_31,R.string.dname_32,R.string.dname_33,R.string.dname_34,R.string.dname_35,R.string.dname_36,R.string.dname_37,R.string.dname_38,R.string.dname_39};
 
-    int[] title = {R.string.symptoms_0,R.string.symptoms_1,R.string.symptoms_2,R.string.prevention_0,R.string.prevention_1,R.string.prevention_2,R.string.cause_0,R.string.cause_1,R.string.cause_2,R.string.bcontrol_0,R.string.bcontrol_1,R.string.bcontrol_2};
+    int[] symptoms = {R.string.symptoms_01, R.string.symptoms_02, R.string.symptoms_03, R.string.symptoms_04, R.string.symptoms_05, R.string.symptoms_06, R.string.symptoms_07, R.string.symptoms_08, R.string.symptoms_09, R.string.symptoms_10, R.string.symptoms_11, R.string.symptoms_12, R.string.symptoms_13, R.string.symptoms_14, R.string.symptoms_15, R.string.symptoms_16, R.string.symptoms_17, R.string.symptoms_18, R.string.symptoms_19, R.string.symptoms_20, R.string.symptoms_21, R.string.symptoms_22, R.string.symptoms_23, R.string.symptoms_24, R.string.symptoms_25, R.string.symptoms_26, R.string.symptoms_27, R.string.symptoms_28, R.string.symptoms_29, R.string.symptoms_30, R.string.symptoms_31, R.string.symptoms_32, R.string.symptoms_33, R.string.symptoms_34, R.string.symptoms_35, R.string.symptoms_36, R.string.symptoms_37, R.string.symptoms_38, R.string.symptoms_38};
+    int[] prevention = {R.string.prevention_01, R.string.prevention_02, R.string.prevention_03, R.string.prevention_04, R.string.prevention_05, R.string.prevention_06, R.string.prevention_07, R.string.prevention_08, R.string.prevention_09, R.string.prevention_10, R.string.prevention_11, R.string.prevention_12, R.string.prevention_13, R.string.prevention_14, R.string.prevention_15, R.string.prevention_16, R.string.prevention_17, R.string.prevention_18, R.string.prevention_19, R.string.prevention_20, R.string.prevention_21, R.string.prevention_22, R.string.prevention_23, R.string.prevention_24, R.string.prevention_25, R.string.prevention_26, R.string.prevention_27, R.string.prevention_28, R.string.prevention_29, R.string.prevention_30, R.string.prevention_31, R.string.prevention_32, R.string.prevention_33, R.string.prevention_34, R.string.prevention_35, R.string.prevention_36, R.string.prevention_37, R.string.prevention_38, R.string.prevention_39};
+    int[] cause = {R.string.cause_01, R.string.cause_02, R.string.cause_03, R.string.cause_04, R.string.cause_05, R.string.cause_06, R.string.cause_07, R.string.cause_08, R.string.cause_09, R.string.cause_10, R.string.cause_11, R.string.cause_12, R.string.cause_13, R.string.cause_14, R.string.cause_15, R.string.cause_16, R.string.cause_17, R.string.cause_18, R.string.cause_19, R.string.cause_20, R.string.cause_21, R.string.cause_22, R.string.cause_23, R.string.cause_24, R.string.cause_25, R.string.cause_26, R.string.cause_27, R.string.cause_28, R.string.cause_29, R.string.cause_30, R.string.cause_31, R.string.cause_32, R.string.cause_33, R.string.cause_34, R.string.cause_35, R.string.cause_36, R.string.cause_37, R.string.cause_38, R.string.cause_39};
+    int[] biological = {R.string.biological_01, R.string.biological_02, R.string.biological_03, R.string.biological_04, R.string.biological_05, R.string.biological_06, R.string.biological_07, R.string.biological_08, R.string.biological_09, R.string.biological_10, R.string.biological_11, R.string.biological_12, R.string.biological_13, R.string.biological_14, R.string.biological_15, R.string.biological_16, R.string.biological_17, R.string.biological_18, R.string.biological_19, R.string.biological_20, R.string.biological_21, R.string.biological_22, R.string.biological_23, R.string.biological_24, R.string.biological_25, R.string.biological_26, R.string.biological_27, R.string.biological_28, R.string.biological_29, R.string.biological_30, R.string.biological_31, R.string.biological_32, R.string.biological_33, R.string.biological_34, R.string.biological_35, R.string.biological_36, R.string.biological_37, R.string.biological_38, R.string.biological_39};
 
-    int[][] details_0 = {{R.string.dd_1_01_0, R.string.dd_2_01_0, R.string.dd_3_01_0, R.string.dd_4_01_0}, {R.string.dd_1_02_0, R.string.dd_2_02_0, R.string.dd_3_02_0, R.string.dd_4_02_0}, {R.string.dd_1_03_0, R.string.dd_2_03_0, R.string.dd_3_03_0, R.string.dd_4_03_0}, {R.string.dd_1_04_0, R.string.dd_2_04_0, R.string.dd_3_04_0, R.string.dd_4_04_0}, {R.string.dd_1_05_0, R.string.dd_2_05_0, R.string.dd_3_05_0, R.string.dd_4_05_0}, {R.string.dd_1_06_0, R.string.dd_2_06_0, R.string.dd_3_06_0, R.string.dd_4_06_0}, {R.string.dd_1_07_0, R.string.dd_2_07_0, R.string.dd_3_07_0, R.string.dd_4_07_0}, {R.string.dd_1_08_0, R.string.dd_2_08_0, R.string.dd_3_08_0, R.string.dd_4_08_0}, {R.string.dd_1_09_0, R.string.dd_2_09_0, R.string.dd_3_09_0, R.string.dd_4_09_0}, {R.string.dd_1_10_0, R.string.dd_2_10_0, R.string.dd_3_10_0, R.string.dd_4_10_0}, {R.string.dd_1_11_0, R.string.dd_2_11_0, R.string.dd_3_11_0, R.string.dd_4_11_0}, {R.string.dd_1_12_0, R.string.dd_2_12_0, R.string.dd_3_12_0, R.string.dd_4_12_0}, {R.string.dd_1_13_0, R.string.dd_2_13_0, R.string.dd_3_13_0, R.string.dd_4_13_0}, {R.string.dd_1_14_0, R.string.dd_2_14_0, R.string.dd_3_14_0, R.string.dd_4_14_0}, {R.string.dd_1_15_0, R.string.dd_2_15_0, R.string.dd_3_15_0, R.string.dd_4_15_0}, {R.string.dd_1_16_0, R.string.dd_2_16_0, R.string.dd_3_16_0, R.string.dd_4_16_0}, {R.string.dd_1_17_0, R.string.dd_2_17_0, R.string.dd_3_17_0, R.string.dd_4_17_0}, {R.string.dd_1_18_0, R.string.dd_2_18_0, R.string.dd_3_18_0, R.string.dd_4_18_0}, {R.string.dd_1_19_0, R.string.dd_2_19_0, R.string.dd_3_19_0, R.string.dd_4_19_0}, {R.string.dd_1_20_0, R.string.dd_2_20_0, R.string.dd_3_20_0, R.string.dd_4_20_0}, {R.string.dd_1_21_0, R.string.dd_2_21_0, R.string.dd_3_21_0, R.string.dd_4_21_0}, {R.string.dd_1_22_0, R.string.dd_2_22_0, R.string.dd_3_22_0, R.string.dd_4_22_0}, {R.string.dd_1_23_0, R.string.dd_2_23_0, R.string.dd_3_23_0, R.string.dd_4_23_0}, {R.string.dd_1_24_0, R.string.dd_2_24_0, R.string.dd_3_24_0, R.string.dd_4_24_0}, {R.string.dd_1_25_0, R.string.dd_2_25_0, R.string.dd_3_25_0, R.string.dd_4_25_0}, {R.string.dd_1_26_0, R.string.dd_2_26_0, R.string.dd_3_26_0, R.string.dd_4_26_0}, {R.string.dd_1_27_0, R.string.dd_2_27_0, R.string.dd_3_27_0, R.string.dd_4_27_0}, {R.string.dd_1_28_0, R.string.dd_2_28_0, R.string.dd_3_28_0, R.string.dd_4_28_0}, {R.string.dd_1_29_0, R.string.dd_2_29_0, R.string.dd_3_29_0, R.string.dd_4_29_0}, {R.string.dd_1_30_0, R.string.dd_2_30_0, R.string.dd_3_30_0, R.string.dd_4_30_0}, {R.string.dd_1_31_0, R.string.dd_2_31_0, R.string.dd_3_31_0, R.string.dd_4_31_0}, {R.string.dd_1_32_0, R.string.dd_2_32_0, R.string.dd_3_32_0, R.string.dd_4_32_0}, {R.string.dd_1_33_0, R.string.dd_2_33_0, R.string.dd_3_33_0, R.string.dd_4_33_0}, {R.string.dd_1_34_0, R.string.dd_2_34_0, R.string.dd_3_34_0, R.string.dd_4_34_0}, {R.string.dd_1_35_0, R.string.dd_2_35_0, R.string.dd_3_35_0, R.string.dd_4_35_0}, {R.string.dd_1_36_0, R.string.dd_2_36_0, R.string.dd_3_36_0, R.string.dd_4_36_0}, {R.string.dd_1_37_0, R.string.dd_2_37_0, R.string.dd_3_37_0, R.string.dd_4_37_0}, {R.string.dd_1_38_0, R.string.dd_2_38_0, R.string.dd_3_38_0, R.string.dd_4_38_0}};
-    int[][] details_1 = {{R.string.dd_1_01_1, R.string.dd_2_01_1, R.string.dd_3_01_1, R.string.dd_4_01_1}, {R.string.dd_1_02_1, R.string.dd_2_02_1, R.string.dd_3_02_1, R.string.dd_4_02_1}, {R.string.dd_1_03_1, R.string.dd_2_03_1, R.string.dd_3_03_1, R.string.dd_4_03_1}, {R.string.dd_1_04_1, R.string.dd_2_04_1, R.string.dd_3_04_1, R.string.dd_4_04_1}, {R.string.dd_1_05_1, R.string.dd_2_05_1, R.string.dd_3_05_1, R.string.dd_4_05_1}, {R.string.dd_1_06_1, R.string.dd_2_06_1, R.string.dd_3_06_1, R.string.dd_4_06_1}, {R.string.dd_1_07_1, R.string.dd_2_07_1, R.string.dd_3_07_1, R.string.dd_4_07_1}, {R.string.dd_1_08_1, R.string.dd_2_08_1, R.string.dd_3_08_1, R.string.dd_4_08_1}, {R.string.dd_1_09_1, R.string.dd_2_09_1, R.string.dd_3_09_1, R.string.dd_4_09_1}, {R.string.dd_1_10_1, R.string.dd_2_10_1, R.string.dd_3_10_1, R.string.dd_4_10_1}, {R.string.dd_1_11_1, R.string.dd_2_11_1, R.string.dd_3_11_1, R.string.dd_4_11_1}, {R.string.dd_1_12_1, R.string.dd_2_12_1, R.string.dd_3_12_1, R.string.dd_4_12_1}, {R.string.dd_1_13_1, R.string.dd_2_13_1, R.string.dd_3_13_1, R.string.dd_4_13_1}, {R.string.dd_1_14_1, R.string.dd_2_14_1, R.string.dd_3_14_1, R.string.dd_4_14_1}, {R.string.dd_1_15_1, R.string.dd_2_15_1, R.string.dd_3_15_1, R.string.dd_4_15_1}, {R.string.dd_1_16_1, R.string.dd_2_16_1, R.string.dd_3_16_1, R.string.dd_4_16_1}, {R.string.dd_1_17_1, R.string.dd_2_17_1, R.string.dd_3_17_1, R.string.dd_4_17_1}, {R.string.dd_1_18_1, R.string.dd_2_18_1, R.string.dd_3_18_1, R.string.dd_4_18_1}, {R.string.dd_1_19_1, R.string.dd_2_19_1, R.string.dd_3_19_1, R.string.dd_4_19_1}, {R.string.dd_1_20_1, R.string.dd_2_20_1, R.string.dd_3_20_1, R.string.dd_4_20_1}, {R.string.dd_1_21_1, R.string.dd_2_21_1, R.string.dd_3_21_1, R.string.dd_4_21_1}, {R.string.dd_1_22_1, R.string.dd_2_22_1, R.string.dd_3_22_1, R.string.dd_4_22_1}, {R.string.dd_1_23_1, R.string.dd_2_23_1, R.string.dd_3_23_1, R.string.dd_4_23_1}, {R.string.dd_1_24_1, R.string.dd_2_24_1, R.string.dd_3_24_1, R.string.dd_4_24_1}, {R.string.dd_1_25_1, R.string.dd_2_25_1, R.string.dd_3_25_1, R.string.dd_4_25_1}, {R.string.dd_1_26_1, R.string.dd_2_26_1, R.string.dd_3_26_1, R.string.dd_4_26_1}, {R.string.dd_1_27_1, R.string.dd_2_27_1, R.string.dd_3_27_1, R.string.dd_4_27_1}, {R.string.dd_1_28_1, R.string.dd_2_28_1, R.string.dd_3_28_1, R.string.dd_4_28_1}, {R.string.dd_1_29_1, R.string.dd_2_29_1, R.string.dd_3_29_1, R.string.dd_4_29_1}, {R.string.dd_1_30_1, R.string.dd_2_30_1, R.string.dd_3_30_1, R.string.dd_4_30_1}, {R.string.dd_1_31_1, R.string.dd_2_31_1, R.string.dd_3_31_1, R.string.dd_4_31_1}, {R.string.dd_1_32_1, R.string.dd_2_32_1, R.string.dd_3_32_1, R.string.dd_4_32_1}, {R.string.dd_1_33_1, R.string.dd_2_33_1, R.string.dd_3_33_1, R.string.dd_4_33_1}, {R.string.dd_1_34_1, R.string.dd_2_34_1, R.string.dd_3_34_1, R.string.dd_4_34_1}, {R.string.dd_1_35_1, R.string.dd_2_35_1, R.string.dd_3_35_1, R.string.dd_4_35_1}, {R.string.dd_1_36_1, R.string.dd_2_36_1, R.string.dd_3_36_1, R.string.dd_4_36_1}, {R.string.dd_1_37_1, R.string.dd_2_37_1, R.string.dd_3_37_1, R.string.dd_4_37_1}, {R.string.dd_1_38_1, R.string.dd_2_38_1, R.string.dd_3_38_1, R.string.dd_4_38_1}};
-    int[][] details_2 = {{R.string.dd_1_01_2, R.string.dd_2_01_2, R.string.dd_3_01_2, R.string.dd_4_01_2}, {R.string.dd_1_02_2, R.string.dd_2_02_2, R.string.dd_3_02_2, R.string.dd_4_02_2}, {R.string.dd_1_03_2, R.string.dd_2_03_2, R.string.dd_3_03_2, R.string.dd_4_03_2}, {R.string.dd_1_04_2, R.string.dd_2_04_2, R.string.dd_3_04_2, R.string.dd_4_04_2}, {R.string.dd_1_05_2, R.string.dd_2_05_2, R.string.dd_3_05_2, R.string.dd_4_05_2}, {R.string.dd_1_06_2, R.string.dd_2_06_2, R.string.dd_3_06_2, R.string.dd_4_06_2}, {R.string.dd_1_07_2, R.string.dd_2_07_2, R.string.dd_3_07_2, R.string.dd_4_07_2}, {R.string.dd_1_08_2, R.string.dd_2_08_2, R.string.dd_3_08_2, R.string.dd_4_08_2}, {R.string.dd_1_09_2, R.string.dd_2_09_2, R.string.dd_3_09_2, R.string.dd_4_09_2}, {R.string.dd_1_10_2, R.string.dd_2_10_2, R.string.dd_3_10_2, R.string.dd_4_10_2}, {R.string.dd_1_11_2, R.string.dd_2_11_2, R.string.dd_3_11_2, R.string.dd_4_11_2}, {R.string.dd_1_12_2, R.string.dd_2_12_2, R.string.dd_3_12_2, R.string.dd_4_12_2}, {R.string.dd_1_13_2, R.string.dd_2_13_2, R.string.dd_3_13_2, R.string.dd_4_13_2}, {R.string.dd_1_14_2, R.string.dd_2_14_2, R.string.dd_3_14_2, R.string.dd_4_14_2}, {R.string.dd_1_15_2, R.string.dd_2_15_2, R.string.dd_3_15_2, R.string.dd_4_15_2}, {R.string.dd_1_16_2, R.string.dd_2_16_2, R.string.dd_3_16_2, R.string.dd_4_16_2}, {R.string.dd_1_17_2, R.string.dd_2_17_2, R.string.dd_3_17_2, R.string.dd_4_17_2}, {R.string.dd_1_18_2, R.string.dd_2_18_2, R.string.dd_3_18_2, R.string.dd_4_18_2}, {R.string.dd_1_19_2, R.string.dd_2_19_2, R.string.dd_3_19_2, R.string.dd_4_19_2}, {R.string.dd_1_20_2, R.string.dd_2_20_2, R.string.dd_3_20_2, R.string.dd_4_20_2}, {R.string.dd_1_21_2, R.string.dd_2_21_2, R.string.dd_3_21_2, R.string.dd_4_21_2}, {R.string.dd_1_22_2, R.string.dd_2_22_2, R.string.dd_3_22_2, R.string.dd_4_22_2}, {R.string.dd_1_23_2, R.string.dd_2_23_2, R.string.dd_3_23_2, R.string.dd_4_23_2}, {R.string.dd_1_24_2, R.string.dd_2_24_2, R.string.dd_3_24_2, R.string.dd_4_24_2}, {R.string.dd_1_25_2, R.string.dd_2_25_2, R.string.dd_3_25_2, R.string.dd_4_25_2}, {R.string.dd_1_26_2, R.string.dd_2_26_2, R.string.dd_3_26_2, R.string.dd_4_26_2}, {R.string.dd_1_27_2, R.string.dd_2_27_2, R.string.dd_3_27_2, R.string.dd_4_27_2}, {R.string.dd_1_28_2, R.string.dd_2_28_2, R.string.dd_3_28_2, R.string.dd_4_28_2}, {R.string.dd_1_29_2, R.string.dd_2_29_2, R.string.dd_3_29_2, R.string.dd_4_29_2}, {R.string.dd_1_30_2, R.string.dd_2_30_2, R.string.dd_3_30_2, R.string.dd_4_30_2}, {R.string.dd_1_31_2, R.string.dd_2_31_2, R.string.dd_3_31_2, R.string.dd_4_31_2}, {R.string.dd_1_32_2, R.string.dd_2_32_2, R.string.dd_3_32_2, R.string.dd_4_32_2}, {R.string.dd_1_33_2, R.string.dd_2_33_2, R.string.dd_3_33_2, R.string.dd_4_33_2}, {R.string.dd_1_34_2, R.string.dd_2_34_2, R.string.dd_3_34_2, R.string.dd_4_34_2}, {R.string.dd_1_35_2, R.string.dd_2_35_2, R.string.dd_3_35_2, R.string.dd_4_35_2}, {R.string.dd_1_36_2, R.string.dd_2_36_2, R.string.dd_3_36_2, R.string.dd_4_36_2}, {R.string.dd_1_37_2, R.string.dd_2_37_2, R.string.dd_3_37_2, R.string.dd_4_37_2}, {R.string.dd_1_38_2, R.string.dd_2_38_2, R.string.dd_3_38_2, R.string.dd_4_38_2}};
-
-    int[] dImage ={R.drawable.dp01,R.drawable.dp02,R.drawable.dp03,R.drawable.dp04,R.drawable.dp05,R.drawable.dp06,R.drawable.dp07,R.drawable.dp08,R.drawable.dp09,R.drawable.dp10,R.drawable.dp11,R.drawable.dp12,R.drawable.dp13,R.drawable.dp14,R.drawable.dp15,R.drawable.dp16,R.drawable.dp17,R.drawable.dp18,R.drawable.dp19,R.drawable.dp20,R.drawable.dp21,R.drawable.dp22,R.drawable.dp23,R.drawable.dp24,R.drawable.dp25,R.drawable.dp26,R.drawable.dp27,R.drawable.dp28,R.drawable.dp29,R.drawable.dp30,R.drawable.dp31,R.drawable.dp32,R.drawable.dp33,R.drawable.dp34,R.drawable.dp35,R.drawable.dp36,R.drawable.dp37,R.drawable.dp38};
+    int[] dImage = {
+            R.drawable.dp00_0, R.drawable.dp01_0, R.drawable.dp02_0, R.drawable.dp03_0,
+            R.drawable.dp04_0, R.drawable.dp05_0, R.drawable.dp06_0, R.drawable.dp07_0,
+            R.drawable.dp08_0, R.drawable.dp09_0, R.drawable.dp10_0, R.drawable.dp11_0,
+            R.drawable.dp12_0, R.drawable.dp13_0, R.drawable.dp14_0, R.drawable.dp15_0,
+            R.drawable.dp16_0, R.drawable.dp17_0, R.drawable.dp18_0, R.drawable.dp19_0,
+            R.drawable.dp20_0, R.drawable.dp21_0, R.drawable.dp22_0, R.drawable.dp23_0,
+            R.drawable.dp24_0, R.drawable.dp25_0, R.drawable.dp26_0, R.drawable.dp27_0,
+            R.drawable.dp28_0, R.drawable.dp29_0, R.drawable.dp30_0, R.drawable.dp31_0,
+            R.drawable.dp32_0, R.drawable.dp33_0, R.drawable.dp34_0, R.drawable.dp35_0,
+            R.drawable.dp36_0, R.drawable.dp37_0, R.drawable.dp38_0
+    };
     ImageView diseaseImageView;
     ImageButton imageButton;
 
@@ -46,7 +54,7 @@ public class AboutDisease extends AppCompatActivity implements View.OnClickListe
 
         __init__();
         selected_lang = load_setting();
-        setLang(selected_lang);
+        setLang();
 
     }
 
@@ -67,65 +75,27 @@ public class AboutDisease extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private void setLang(int selected_lang){
+    private void setLang(){
 
         diseaseImageView.setImageResource(dImage[did - 1]);
-        switch (selected_lang)
-        {
-            case 0:
-            {
-                diseaseName.setText(getString(stringDnames_0[did - 1]));
 
-                symptomsTitle.setText(getString(title[0]));
-                preventionTitle.setText(getString(title[3]));
-                causeTitle.setText(getString(title[6]));
-                biologicalControlTitle.setText(getString(title[9]));
+        diseaseName.setText(getString(stringDnames[did - 1]));
+        symptomsTitle.setText(getString(R.string.symptoms));
+        preventionTitle.setText(getString(R.string.prevention));
+        causeTitle.setText(getString(R.string.cause));
+        biologicalControlTitle.setText(getString(R.string.bcontrol));
 
-                symptomsContents.setText(getString(details_0[did-1][0]));
-                preventionContents.setText(getString(details_0[did-1][1]));
-                causeContents.setText(getString(details_0[did-1][2]));
-                biologicalControlContents.setText(getString(details_0[did-1][3]));
-            }
-            break;
-            case 1:
-            {
-                diseaseName.setText(getString(stringDnames_1[did - 1]));
-
-                symptomsTitle.setText(getString(title[1]));
-                preventionTitle.setText(getString(title[4]));
-                causeTitle.setText(getString(title[7]));
-                biologicalControlTitle.setText(getString(title[10]));
-
-                symptomsContents.setText(getString(details_1[did-1][0]));
-                preventionContents.setText(getString(details_1[did-1][1]));
-                causeContents.setText(getString(details_1[did-1][2]));
-                biologicalControlContents.setText(getString(details_1[did-1][3]));
-            }
-            break;
-            case 2:
-            {
-                diseaseName.setText(getString(stringDnames_2[did - 1]));
-
-                symptomsTitle.setText(getString(title[2]));
-                preventionTitle.setText(getString(title[5]));
-                causeTitle.setText(getString(title[8]));
-                biologicalControlTitle.setText(getString(title[11]));
-
-                symptomsContents.setText(getString(details_2[did-1][0]));
-                preventionContents.setText(getString(details_2[did-1][1]));
-                causeContents.setText(getString(details_2[did-1][2]));
-                biologicalControlContents.setText(getString(details_2[did-1][3]));
-            }
-            break;
-        }
+        symptomsContents.setText(getString(symptoms[did-1]));
+        preventionContents.setText(getString(prevention[did-1]));
+        causeContents.setText(getString(cause[did-1]));
+        biologicalControlContents.setText(getString(biological[did-1]));
     }
 
     //TODO Load Setting
-    int load_setting()
+    String load_setting()
     {
         SharedPreferences mySharedPreference = getSharedPreferences(SHARED,MODE_PRIVATE);
-        int i = mySharedPreference.getInt(SHARED_APP_LANG,0);
-        return i;
+        return mySharedPreference.getString(SHARED_APP_LANG,"en");
     }
 
 
@@ -133,15 +103,13 @@ public class AboutDisease extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        switch (v.getId())
-        {
-            case R.id.BackImageButton:finish();break;
-
-            case R.id.DiseaseImageView:
-                Intent intent  = new Intent(this,ImageSlider.class);
-                intent.putExtra("id",did);
-                startActivity(intent);
-                break;
+        if (v.getId() == R.id.BackImageButton) {
+            finish();
+        } else if (v.getId() == R.id.DiseaseImageView) {
+            Intent intent = new Intent(this, ImageSlider.class);
+            intent.putExtra("id", did);
+            startActivity(intent);
         }
+
     }
 }

@@ -1,5 +1,6 @@
 package com.example.plantai;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,7 +21,7 @@ public class Home extends AppCompatActivity implements PlantCardsAdapter.PlantCa
 
     private static final String SHARED = "Settings";
     private static final String SHARED_APP_LANG = "app_lang";
-    private int selected_lang;
+    private String selected_lang;
 
     private ArrayList<PlantCard> plantCardArrayList;
     private RecyclerView recyclerView;
@@ -34,16 +35,22 @@ public class Home extends AppCompatActivity implements PlantCardsAdapter.PlantCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
         //get setting and change language
         selected_lang = load_setting();
-        setLang(selected_lang);
+        setLang();
 
 
         //genrate data
         genratePlantData();
         plantRecyclerViewConfig();
 
-
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finishAffinity(); // Close the app
+            }
+        });
     }
     /** onRestart **/
     @Override
@@ -104,82 +111,41 @@ public class Home extends AppCompatActivity implements PlantCardsAdapter.PlantCa
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent = null;
-        switch (item.getItemId()) {
-            case R.id.op_all_diseases:
-                intent = new Intent(this, AllDiseases.class);
-                break;
-            case R.id.op_reports:
-                intent = new Intent(this, Reports.class);
-                break;
-            case R.id.op_setting:
-                intent = new Intent(this, Settings.class);
-                break;
-            case R.id.op_about:
-                intent = new Intent(this, About.class);
-                break;
-
+        if (item.getItemId() == R.id.op_all_diseases) {
+            intent = new Intent(this, AllDiseases.class);
+        } else if (item.getItemId() == R.id.op_reports) {
+            intent = new Intent(this, Reports.class);
+        } else if (item.getItemId() == R.id.op_setting) {
+            intent = new Intent(this, Settings.class);
+        } else if (item.getItemId() == R.id.op_about) {
+            intent = new Intent(this, About.class);
         }
+
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 
     /**  LOADING SETTINGS & SET LANGUAGE **/
-    void setLang(int i) {
-        switch (i) {
-            case 0:
-                System.out.println("CASE 0 ***");
-                plantsName[0] = getString(R.string.apple_name_0);
-                plantsName[1] = getString(R.string.blueberry_name_0);
-                plantsName[2] = getString(R.string.cherry_name_0);
-                plantsName[3] = getString(R.string.corn_name_0);
-                plantsName[4] = getString(R.string.grapes_name_0);
-                plantsName[5] = getString(R.string.orange_name_0);
-                plantsName[6] = getString(R.string.peach_name_0);
-                plantsName[7] = getString(R.string.pepper_bell_name_0);
-                plantsName[8] = getString(R.string.patato_name_0);
-                plantsName[9] = getString(R.string.raspberry_name_0);
-                plantsName[10] = getString(R.string.soybean_name_0);
-                plantsName[11] = getString(R.string.strawberry_name_0);
-                plantsName[12] = getString(R.string.tomato_name_0);
-                break;
-            case 1:
-                System.out.println("CASE 1 ***");
-                plantsName[0] = getString(R.string.apple_name_1);
-                plantsName[1] = getString(R.string.blueberry_name_1);
-                plantsName[2] = getString(R.string.cherry_name_1);
-                plantsName[3] = getString(R.string.corn_name_1);
-                plantsName[4] = getString(R.string.grapes_name_1);
-                plantsName[5] = getString(R.string.orange_name_1);
-                plantsName[6] = getString(R.string.peach_name_1);
-                plantsName[7] = getString(R.string.pepper_bell_name_1);
-                plantsName[8] = getString(R.string.patato_name_1);
-                plantsName[9] = getString(R.string.raspberry_name_1);
-                plantsName[10] = getString(R.string.soybean_name_1);
-                plantsName[11] = getString(R.string.strawberry_name_1);
-                plantsName[12] = getString(R.string.tomato_name_1);
-                break;
-            case 2:
-                System.out.println("CASE 2 ***");
-                plantsName[0] = getString(R.string.apple_name_2);
-                plantsName[1] = getString(R.string.blueberry_name_2);
-                plantsName[2] = getString(R.string.cherry_name_2);
-                plantsName[3] = getString(R.string.corn_name_2);
-                plantsName[4] = getString(R.string.grapes_name_2);
-                plantsName[5] = getString(R.string.orange_name_2);
-                plantsName[6] = getString(R.string.peach_name_2);
-                plantsName[7] = getString(R.string.pepper_bell_name_2);
-                plantsName[8] = getString(R.string.patato_name_2);
-                plantsName[9] = getString(R.string.raspberry_name_2);
-                plantsName[10] = getString(R.string.soybean_name_2);
-                plantsName[11] = getString(R.string.strawberry_name_2);
-                plantsName[12] = getString(R.string.tomato_name_2);
-                break;
-        }
+    void setLang() {
+        plantsName[0] = getString(R.string.apple_name);
+        plantsName[1] = getString(R.string.blueberry_name);
+        plantsName[2] = getString(R.string.cherry_name);
+        plantsName[3] = getString(R.string.corn_name);
+        plantsName[4] = getString(R.string.grapes_name);
+        plantsName[5] = getString(R.string.orange_name);
+        plantsName[6] = getString(R.string.peach_name);
+        plantsName[7] = getString(R.string.pepper_bell_name);
+        plantsName[8] = getString(R.string.potato_name);
+        plantsName[9] = getString(R.string.raspberry_name);
+        plantsName[10] = getString(R.string.soybean_name);
+        plantsName[11] = getString(R.string.strawberry_name);
+        plantsName[12] = getString(R.string.tomato_name);
     }
-    int load_setting() {
+    String load_setting() {
         SharedPreferences mySharedPreference = getSharedPreferences(SHARED, MODE_PRIVATE);
-        int i = mySharedPreference.getInt(SHARED_APP_LANG, 0);
-        return i;
+        return mySharedPreference.getString(SHARED_APP_LANG, "en");
     }
+
+
 
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGray"
+    android:background="@color/colorWhite"
     tools:context=".Result">
 
 
@@ -31,6 +31,16 @@
 
     </RelativeLayout>
 
+    <!-- GIF Loading Spinner -->
+    <ImageView
+        android:id="@+id/loadingGif"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:scaleType="fitCenter"/>
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,7 +61,7 @@
                 android:textAlignment="center"
                 android:layout_marginBottom="5dp"
                 android:textStyle="bold"
-                android:text="Most Similar"/>
+                android:text="@string/proc_image"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewDisease"
@@ -59,7 +69,8 @@
                 android:layout_height="match_parent"
                 android:background="#c1c1c1"
                 android:scrollbars="vertical"
-                android:padding="4dp"/>
+                android:padding="4dp"
+                android:visibility="invisible"/>
 
         </LinearLayout>
     </ScrollView>
