@@ -1,0 +1,18 @@
+# Core
+torch
+torchvision
+numpy
+yacs
+PyYAML
+
+# Training / evaluation
+scikit-learn
+matplotlib
+pillow
+efficientnet_pytorch
+
+# Model export / conversion
+onnx
+onnxruntime
+onnx-tf
+tensorflow
