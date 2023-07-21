@@ -119,6 +119,14 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
             File imgFile = new File(imagePath);
             if (imgFile.exists()) {
                 Bitmap bitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+
+                Bitmap bm = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                System.out.println("XYZ size=" + bm.getWidth() + "x" + bm.getHeight() + " config=" + bm.getConfig());
+                int[] px = new int[bm.getWidth() * bm.getHeight()];
+                bm.getPixels(px, 0, bm.getWidth(), 0, 0, bm.getWidth(), bm.getHeight());
+                for (int i = 0; i < Math.min(10, px.length); i++) System.out.println("XYZ pixel[" + i + "]=" + Integer.toHexString(px[i]));
+
+
                 uiv.setImageBitmap(bitmap);
                 Log.d(TAG, "Image successfully loaded into ImageView.");
 
@@ -126,6 +134,10 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
                 try {
 //                    preinterperter = new Interpreter(loadModelFile(assetManager, "model_imagenet.tflite"));
                     interperter = new Interpreter(loadModelFile(assetManager, "model.tflite"));
+                    int[] ishape = interperter.getInputTensor(0).shape();
+                    Log.d(TAG, "Model Input shape: " + Arrays.toString(ishape));  // e.g. [1, 224, 224, 3] or [1, 3, 224, 224]
+                    Log.d(TAG, "Model Input dtype: " + interperter.getInputTensor(0).dataType());
+
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -231,12 +243,14 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
 
                 // Print result shape
                 System.out.println("Model output shape: " + output.length + " x " + output[0].length);
+                System.out.println("OUTPUT" + output);
                 JSONObject json_output;
                 try {
                     json_output = postProcessOutput(output);
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
+                System.out.println("JOUTPUT" + json_output);
                 // Switch back to UI thread
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
@@ -258,99 +272,103 @@ public class Result extends AppCompatActivity implements View.OnClickListener, D
     }
 
     private ByteBuffer preprocessBitmap(Bitmap bitmap) {
-        int INPUT_SIZE = 224;  // Image size for model
-        ByteBuffer inputBuffer = ByteBuffer.allocateDirect(4 * INPUT_SIZE * INPUT_SIZE * 3);
-        inputBuffer.order(ByteOrder.nativeOrder());
+        // Expecting [1,3,224,224] NCHW, FLOAT32
+        int[] ishape = interperter.getInputTensor(0).shape();   // [1,3,224,224]
+        int C = ishape[1], H = ishape[2], W = ishape[3];
+        Bitmap resized = Bitmap.createScaledBitmap(bitmap, W, H, true);
 
-        Bitmap resizedBitmap = Bitmap.createScaledBitmap(bitmap, INPUT_SIZE, INPUT_SIZE, true);
-        int[] intValues = new int[INPUT_SIZE * INPUT_SIZE];
-        resizedBitmap.getPixels(intValues, 0, INPUT_SIZE, 0, 0, INPUT_SIZE, INPUT_SIZE);
+        int[] px = new int[W * H];
+        resized.getPixels(px, 0, W, 0, 0, W, H);
 
-        for (int pixelValue : intValues) {
-            inputBuffer.putFloat(((pixelValue >> 16) & 0xFF) / 255.0f);
-            inputBuffer.putFloat(((pixelValue >> 8) & 0xFF) / 255.0f);
-            inputBuffer.putFloat((pixelValue & 0xFF) / 255.0f);
+        final float[] MEAN = {0.485f, 0.456f, 0.406f};
+        final float[] STD  = {0.229f, 0.224f, 0.225f};
+
+        ByteBuffer buf = ByteBuffer.allocateDirect(4 * C * H * W).order(ByteOrder.nativeOrder());
+
+        // R plane
+        for (int y = 0; y < H; y++) {
+            int row = y * W;
+            for (int x = 0; x < W; x++) {
+                int c = px[row + x];
+                float r = ((c >> 16) & 0xFF) / 255.0f;
+                buf.putFloat((r - MEAN[0]) / STD[0]);
+            }
+        }
+        // G plane
+        for (int y = 0; y < H; y++) {
+            int row = y * W;
+            for (int x = 0; x < W; x++) {
+                int c = px[row + x];
+                float g = ((c >> 8) & 0xFF) / 255.0f;
+                buf.putFloat((g - MEAN[1]) / STD[1]);
+            }
+        }
+        // B plane
+        for (int y = 0; y < H; y++) {
+            int row = y * W;
+            for (int x = 0; x < W; x++) {
+                int c = px[row + x];
+                float b = (c & 0xFF) / 255.0f;
+                buf.putFloat((b - MEAN[2]) / STD[2]);
+            }
         }
 
-        return inputBuffer;
+        buf.rewind();
+        return buf;
     }
 
     private JSONObject postProcessOutput(float[][] output) throws JSONException {
-//        float[][] imagenet_output parameter
         JSONArray jsonArray = new JSONArray();
-        float[] probabilities = output[0]; // Extract the first row of output
-//        Boolean isLeaf = isLeafImage(imagenet_output, 3);
-        // Create array of index-probability pairs
+
+        // Extract raw model outputs (logits or probabilities depending on the model)
+        float[] logits = output[0];
+
+        // ---------- Step 1: Apply Softmax ----------
+        // To convert raw logits to probabilities [0,1] that sum to 1
+        float maxLogit = Float.NEGATIVE_INFINITY;
+        for (float val : logits) {
+            if (val > maxLogit) maxLogit = val;   // For numerical stability
+        }
+
+        float sumExp = 0f;
+        float[] probabilities = new float[logits.length];
+        for (int i = 0; i < logits.length; i++) {
+            probabilities[i] = (float) Math.exp(logits[i] - maxLogit);
+            sumExp += probabilities[i];
+        }
+        for (int i = 0; i < probabilities.length; i++) {
+            probabilities[i] /= sumExp;  // Normalize
+        }
+        // ---------- End Softmax ----------
+
+        // ---------- Step 2: Sort indices by probability ----------
         Integer[] indices = new Integer[probabilities.length];
         for (int i = 0; i < probabilities.length; i++) {
             indices[i] = i;
         }
 
-        // Sort indices based on probability values (Descending Order)
         Arrays.sort(indices, new Comparator<Integer>() {
             @Override
             public int compare(Integer a, Integer b) {
                 return Float.compare(probabilities[b], probabilities[a]); // Descending order
             }
         });
+        // ---------- End Sorting ----------
 
-        // Create JSON array with sorted values
+        // ---------- Step 3: Build JSON with sorted predictions ----------
         for (int i = 0; i < probabilities.length; i++) {
             JSONObject entry = new JSONObject();
-            entry.put("index", indices[i]);
-            entry.put("prob", probabilities[indices[i]]);
+            entry.put("index", indices[i]);                  // class index
+            entry.put("prob", probabilities[indices[i]]);    // softmax probability
             jsonArray.put(entry);
         }
 
-        // Wrap in a final JSON object
         JSONObject resultJson = new JSONObject();
         resultJson.put("predictions", jsonArray);
-//        resultJson.put("isLeaf", isLeaf);
 
         return resultJson;
     }
 
-//    public static boolean isLeafImage(float[][] imagenet_output, int topK) {
-//        // Define plant-related ImageNet class indices
-//        Set<Integer> leafClasses = new HashSet<>(Arrays.asList(
-//                936, 937, 938, 939, 940, 941, 942, 943, 944, 945,
-//                948, 949, 950, 951, 952, 953, 954, 955, 956, 957,
-//                984, 985, 986, 987, 988, 989, 990, 991, 992, 993,
-//                994, 995, 996, 997, 998
-//        ));
-//
-//        // Extract ImageNet probabilities (Shape [1, 1000])
-//        float[] imagenet_probabilities = imagenet_output[0];
-//
-//        // Debugging: Print the output shape
-//        System.out.println("Output Shape: [" + imagenet_output.length + ", " + imagenet_probabilities.length + "]");
-//
-//        // Create an array of class indices
-//        Integer[] indices = new Integer[imagenet_probabilities.length];
-//        for (int i = 0; i < imagenet_probabilities.length; i++) {
-//            indices[i] = i;
-//        }
-//
-//        // Sort indices based on probability values (Descending Order)
-//        Arrays.sort(indices, (a, b) -> Float.compare(imagenet_probabilities[b], imagenet_probabilities[a]));
-//
-//        // Debugging: Print Top-K predictions
-//        System.out.println("Top " + imagenet_probabilities.length + " Predictions:");
-//        for (int i = 0; i < imagenet_probabilities.length; i++) {
-//            System.out.println("Rank " + (i + 1) + ": Class " + indices[i] + " (Probability: " + imagenet_probabilities[indices[i]] + ")");
-//        }
-//
-//        // Check if any of the top K indices belong to the leaf class list
-//        for (int i = 0; i < topK; i++) {
-//            if (leafClasses.contains(indices[i])) {
-//                System.out.println("✅ Leaf detected in Top-" + topK);
-//                return true;  // Found a leaf-related class
-//            }
-//        }
-//
-//        System.out.println("❌ No leaf detected in Top-" + topK);
-//        return false;  // No leaf-related class found
-//    }
 
 
     private void genrateDiseaseData(JSONObject resultJson) throws JSONException {
